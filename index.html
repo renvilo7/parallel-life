@@ -47,19 +47,21 @@ h2{font-size:27px}
 
 .sharecard{background:#080b0e;border:1px solid #3a444d;border-radius:18px;overflow:hidden;color:#edf2f3;box-shadow:0 18px 60px #0008;aspect-ratio:3/4;display:flex;flex-direction:column}
 .sc-head{padding:14px 16px;border-bottom:1px solid #29333d;display:flex;justify-content:space-between;gap:10px;font-size:11px;letter-spacing:.1em;color:#8fe3c2;flex:0 0 auto}
-.sc-img{width:100%;height:41%;object-fit:cover;object-position:center 20%;display:block;filter:saturate(.82) contrast(1.04);flex:0 0 auto}
-.sc-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px;flex:1}
-.sc-job{font-size:29px;font-weight:900;line-height:1.12;margin:2px 0 4px}
-.sc-meta{color:#99a4ad;line-height:1.6;font-size:14px}
-.sc-data{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.sc-cell{border:1px solid #29333d;border-radius:9px;padding:8px 9px;font-size:11px;color:#9aa5ad;background:rgba(255,255,255,.015)}
-.sc-cell b{display:block;color:#f2f5f5;font-size:17px;margin-top:4px}
-.sc-label{color:#8fe3c2;font-size:11px;letter-spacing:.12em;margin-top:2px}
-.sc-story,.sc-relic{font-size:14px;line-height:1.62}
+.sc-img{width:100%;height:36%;object-fit:cover;object-position:center 20%;display:block;filter:saturate(.82) contrast(1.04);flex:0 0 auto}
+.sc-body{padding:13px 16px 14px;display:flex;flex-direction:column;gap:8px;flex:1;min-height:0}
+.sc-job{font-size:28px;font-weight:900;line-height:1.1;margin:1px 0 3px}
+.sc-meta{color:#99a4ad;line-height:1.45;font-size:13px}
+.sc-data{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.sc-cell{border:1px solid #29333d;border-radius:9px;padding:7px 8px;font-size:10px;color:#9aa5ad;background:rgba(255,255,255,.015)}
+.sc-cell b{display:block;color:#f2f5f5;font-size:16px;margin-top:3px}
+.sc-label{color:#8fe3c2;font-size:10px;letter-spacing:.12em;margin-top:1px}
+.sc-story{font-size:13px;line-height:1.5}.sc-relic{font-size:13px;line-height:1.5}
 .clamp2,.clamp3{display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
 .clamp2{-webkit-line-clamp:2}
 .clamp3{-webkit-line-clamp:3}
-.sc-foot{border-top:1px solid #29333d;margin-top:auto;padding-top:10px;color:#66727c;font-size:10px;display:flex;justify-content:space-between;gap:12px}
+.eventBox{border-left:2px solid #8fe3c2;padding-left:10px;margin-top:1px}
+
+.sc-foot{border-top:1px solid #29333d;margin-top:auto;padding-top:8px;color:#66727c;font-size:9px;display:flex;justify-content:space-between;gap:10px}
 .saveRow{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
 .secondary{text-align:center}
 </style></head><body><div class="scan"></div><div class="wrap"><div class="top"><span class="brand">半格电 // HALF BATTERY</span><span>PARALLEL ARCHIVE</span></div>
@@ -70,7 +72,7 @@ h2{font-size:27px}
 <section id="res" class="screen result"><div id="out"></div></section></div>
 <div id="modal" class="modal"><div class="modalin">
 <div class="modalTop"><button class="btn closeMini" onclick="modal.classList.remove('on')">关闭</button></div>
-<p class="helper">居民档案卡已生成。你可以直接保存图片，也可以截图分享。</p>
+<p class="helper">居民档案卡已生成。已压缩为适合手机分享的 3:4 海报。</p>
 <div id="shareCard" class="sharecard"></div>
 <div class="saveRow">
 <button class="btn primary" onclick="saveCard()">保存图片</button>
@@ -90,12 +92,14 @@ function make(seed){let pool=LIVES.filter((x,i)=>i%4===seed);cur=pick(pool);let 
 out.innerHTML=`<img class="portrait" src="${cur.img}"><div style="padding:17px 0"><div class="tag">${code} // CITIZEN RECORD</div><div class="job">${Math.random()<.28?cur.altjob:cur.job}</div><div class="meta">${year} 年出生 · ${place}<br>当前档案年龄：${age} 岁</div></div>
 <div class="stats"><div class="stat">人生稀有度<b>${cur.rare}</b></div><div class="stat">身份可信度<b>${cur.trust}</b></div><div class="stat">危险程度<b>${cur.danger}</b></div><div class="stat">自由程度<b>${cur.freedom}</b></div></div>
 <div class="sec"><h3>01 // 你的世界</h3>${cur.world}</div><div class="sec"><h3>02 // 你靠什么生活</h3>${cur.work}</div><div class="sec"><h3>03 // 人生转折点</h3><div class="twist">${cur.event}</div></div><div class="sec"><h3>04 // 未公开记录</h3>${cur.secret}</div><div class="sec"><h3>05 // 档案结局</h3>${cur.ending}</div><div class="sec"><h3>遗留物</h3><div class="twist">${cur.legacy}</div></div>
-<div class="actions"><button class="btn primary" onclick="makeCard()">▣ 生成居民档案卡</button><button class="btn" onclick="bar.style.width='0';show('s1')">🎲 再活一次</button><div class="tiny">半格电 · 另一条人生 V1.5</div></div>`;show("res")}
+<div class="actions"><button class="btn primary" onclick="makeCard()">▣ 生成居民档案卡</button><button class="btn" onclick="bar.style.width='0';show('s1')">🎲 再活一次</button><div class="tiny">半格电 · 另一条人生 V1.6</div></div>`;show("res")}
 function wrap(ctx,t,x,y,max,lineH,maxLines=99){let arr=[],line="";for(let ch of t){let test=line+ch;if(ctx.measureText(test).width>max&&line){arr.push(line);line=ch}else line=test}if(line)arr.push(line);arr.slice(0,maxLines).forEach((a,i)=>ctx.fillText(a,x,y+i*lineH));return y+Math.min(arr.length,maxLines)*lineH}
 function makeCard(){
  try{
   if(!cur){alert("请先生成人生档案。");return}
   const displayJob = document.querySelector('.job') ? document.querySelector('.job').textContent : cur.job;
+  const dangerN=(cur.danger.match(/★/g)||[]).length;
+  const freedomN=(cur.freedom.match(/★/g)||[]).length;
   shareCard.innerHTML=`
     <div class="sc-head"><span>PARALLEL LIFE ARCHIVE</span><span>${code}</span></div>
     <img class="sc-img" src="${cur.img}" alt="${displayJob}">
@@ -106,14 +110,12 @@ function makeCard(){
       <div class="sc-data">
         <div class="sc-cell">稀有度<b>${cur.rare}</b></div>
         <div class="sc-cell">可信度<b>${cur.trust}</b></div>
-        <div class="sc-cell">危险程度<b>${cur.danger}</b></div>
-        <div class="sc-cell">自由程度<b>${cur.freedom}</b></div>
+        <div class="sc-cell">危险程度<b>${dangerN}/5</b></div>
+        <div class="sc-cell">自由程度<b>${freedomN}/5</b></div>
       </div>
       <div class="sc-label">TURNING POINT // 人生转折点</div>
-      <div class="sc-story clamp3">${cur.event}</div>
-      <div class="sc-label">RELIC // 遗留物</div>
-      <div class="sc-relic clamp2">${cur.legacy}</div>
-      <div class="sc-foot"><span>半格电 // HALF BATTERY</span><span>ANOTHER LIFE. STILL YOU.</span></div>
+      <div class="eventBox"><div class="sc-story clamp3">${cur.event}</div></div>
+      <div class="sc-foot"><span>半格电 // HALF BATTERY</span><span>${code}</span></div>
     </div>`;
   modal.classList.add("on");
   modal.scrollTop=0;
