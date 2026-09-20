@@ -73,7 +73,7 @@ h2{font-size:27px}
 <section id="res" class="screen result"><div id="out"></div></section></div>
 <div id="modal" class="modal"><div class="modalin">
 <div class="modalTop"><button class="btn closeMini" onclick="modal.classList.remove('on')">关闭</button></div>
-<p class="helper">居民档案卡已生成。预览会自动适配手机宽度，保存仍为 1080×1440 高清图。</p>
+<p class="helper">你的另一条人生已归档。保存这张居民档案卡。</p>
 <img id="sharePreview" class="cardpreview" alt="居民档案卡">
 <div class="saveRow">
 <button class="btn primary" onclick="saveCard()">保存图片</button>
@@ -92,7 +92,7 @@ function make(seed){let pool=LIVES.filter((x,i)=>i%4===seed);cur=pick(pool);let 
 out.innerHTML=`<img class="portrait" src="${cur.img}"><div style="padding:17px 0"><div class="tag">${code} // CITIZEN RECORD</div><div class="job">${Math.random()<.28?cur.altjob:cur.job}</div><div class="meta">${year} 年出生 · ${place}<br>当前档案年龄：${age} 岁</div></div>
 <div class="stats"><div class="stat">人生稀有度<b>${cur.rare}</b></div><div class="stat">身份可信度<b>${cur.trust}</b></div><div class="stat">危险程度<b>${cur.danger}</b></div><div class="stat">自由程度<b>${cur.freedom}</b></div></div>
 <div class="sec"><h3>01 // 你的世界</h3>${cur.world}</div><div class="sec"><h3>02 // 你靠什么生活</h3>${cur.work}</div><div class="sec"><h3>03 // 人生转折点</h3><div class="twist">${cur.event}</div></div><div class="sec"><h3>04 // 未公开记录</h3>${cur.secret}</div><div class="sec"><h3>05 // 档案结局</h3>${cur.ending}</div><div class="sec"><h3>遗留物</h3><div class="twist">${cur.legacy}</div></div>
-<div class="actions"><button class="btn primary" onclick="makeCard()">▣ 生成居民档案卡</button><button class="btn" onclick="bar.style.width='0';show('s1')">🎲 再活一次</button><div class="tiny">半格电 · 另一条人生 V1.8</div></div>`;show("res")}
+<div class="actions"><button class="btn primary" onclick="makeCard()">▣ 生成居民档案卡</button><button class="btn" onclick="bar.style.width='0';show('s1')">🎲 再活一次</button><div class="tiny">半格电 · 另一条人生 V1.9</div></div>`;show("res")}
 function wrap(ctx,t,x,y,max,lineH,maxLines=99){let arr=[],line="";for(let ch of t){let test=line+ch;if(ctx.measureText(test).width>max&&line){arr.push(line);line=ch}else line=test}if(line)arr.push(line);arr.slice(0,maxLines).forEach((a,i)=>ctx.fillText(a,x,y+i*lineH));return y+Math.min(arr.length,maxLines)*lineH}
 
 let cardDataUrl="";
