@@ -65,11 +65,81 @@ h2{font-size:27px}
 .sc-foot{border-top:1px solid #29333d;margin-top:auto;padding-top:8px;color:#66727c;font-size:9px;display:flex;justify-content:space-between;gap:10px}
 .saveRow{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
 .secondary{text-align:center}
+
+.heroCode{display:flex;gap:8px;align-items:center;color:#65717c;font-size:10px;letter-spacing:.12em;margin-bottom:8px}
+.heroCode:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--a);box-shadow:0 0 14px #8fe3c288}
+.heroNote{margin-top:18px;padding-top:14px;border-top:1px solid #1d2730;color:#687681;font-size:11px;line-height:1.7}
+.step{color:var(--a);font-size:10px;letter-spacing:.16em;margin-bottom:6px}
+.choiceHint{color:#78858f;font-size:12px;line-height:1.7;margin:0 0 12px}
+.keygrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.keybtn{display:flex;align-items:center;gap:12px;text-align:left;padding:16px}
+.keybtn .ico{font-size:28px;line-height:1}
+.keybtn .keytxt{display:flex;flex-direction:column;gap:2px}
+.keybtn .keytxt b{font-size:14px}
+.keybtn .keytxt span{font-size:10px;color:#71808b;letter-spacing:.08em}
+.loaderBox{position:relative;overflow:hidden}
+.loaderCode{font-size:11px;color:#8fe3c2;letter-spacing:.12em;margin-bottom:13px}
+.loadStatus{min-height:54px;font-size:16px;line-height:1.7;color:#dbe2e6;margin-top:16px}
+.loadTrace{display:flex;justify-content:space-between;color:#5f6d78;font-size:10px;margin-top:10px}
+.resultHero{padding:2px 0 15px}
+.resultEyebrow{color:#8fe3c2;font-size:10px;letter-spacing:.15em;margin-bottom:8px}
+.resultJob{font-size:38px;font-weight:900;line-height:1.08;margin:0 0 8px}
+.resultMeta{color:#8e9aa4;line-height:1.65;font-size:14px}
+.resultPortrait{margin-top:14px}
+.ctaNote{text-align:center;color:#697681;font-size:11px;line-height:1.7;margin:10px 0 0}
+@media(max-width:420px){
+ .resultJob{font-size:34px}
+ .keybtn{padding:14px 12px}
+ .keybtn .ico{font-size:25px}
+}
+
 </style></head><body><div class="scan"></div><div class="wrap"><div class="top"><span class="brand">半格电 // HALF BATTERY</span><span>PARALLEL ARCHIVE</span></div>
-<section id="s0" class="screen active"><div class="muted">ANOTHER LIFE FOUND</div><h1>这个世界里，<br>好像还有一个你。</h1><p class="lead">系统找到了一份与你高度匹配的人生档案。它不属于当前世界线。</p><button class="btn primary" onclick="show('s1')">查看我的档案</button><div class="tiny">无需登录 · 大约 10 秒</div></section>
-<section id="s1" class="screen"><div class="box"><div class="muted">WORLDLINE // LOCATION</div><h2>你希望另一个自己生活在哪里？</h2><button class="btn" onclick="world='city';show('s2')">🌆　巨型城市</button><button class="btn" onclick="world='sea';show('s2')">🌊　海上世界</button><button class="btn" onclick="world='wild';show('s2')">🌲　荒野</button><button class="btn" onclick="world='random';show('s2')">🎲　交给世界决定</button></div></section>
-<section id="s2" class="screen"><div class="box"><div class="muted">FINAL KEY</div><h2>不用想，凭直觉选一个。</h2><div class="grid"><button class="btn sym" onclick="finish(0)">🔑</button><button class="btn sym" onclick="finish(1)">🪞</button><button class="btn sym" onclick="finish(2)">🔥</button><button class="btn sym" onclick="finish(3)">🌙</button></div></div></section>
-<section id="load" class="screen"><div class="box"><div class="muted">正在恢复身份档案……</div><br><div class="barbg"><div id="bar" class="bar"></div></div><p class="lead">正在寻找与你最接近的世界线</p></div></section>
+<section id="s0" class="screen active">
+<div class="heroCode">UNRESOLVED IDENTITY // WORLDLINE UNKNOWN</div>
+<div class="muted">ANOTHER LIFE FOUND</div>
+<h1>这个世界之外，<br>还有一份你的档案。</h1>
+<p class="lead">它记录了你没有走过的城市、职业和结局。系统只能恢复其中一条世界线。</p>
+<button class="btn primary" onclick="show('s1')">调取我的档案</button>
+<div class="heroNote">无需登录 · 两次选择 · 大约 10 秒<br>每次调取，都可能得到另一条人生。</div>
+</section>
+
+<section id="s1" class="screen">
+<div class="box">
+<div class="step">01 // WORLD COORDINATE</div>
+<div class="muted">先确定世界坐标</div>
+<h2>哪一个地方最先让你想走进去？</h2>
+<p class="choiceHint">别分析，第一感觉就够了。</p>
+<button class="btn" onclick="world='city';show('s2')">🌆　巨型城市 <span class="muted">· 垂直建筑 / 霓虹 / 人群</span></button>
+<button class="btn" onclick="world='sea';show('s2')">🌊　海上世界 <span class="muted">· 漂流城邦 / 深海 / 港口</span></button>
+<button class="btn" onclick="world='wild';show('s2')">🌲　荒野边境 <span class="muted">· 无人区 / 废墟 / 风</span></button>
+<button class="btn" onclick="world='random';show('s2')">🎲　坐标未知 <span class="muted">· 交给系统决定</span></button>
+</div>
+</section>
+
+<section id="s2" class="screen">
+<div class="box">
+<div class="step">02 // ARCHIVE KEY</div>
+<div class="muted">档案已经锁定</div>
+<h2>选择最后一枚解锁密钥。</h2>
+<p class="choiceHint">没有正确答案。选你第一眼注意到的那个。</p>
+<div class="keygrid">
+<button class="btn keybtn" onclick="finish(0)"><span class="ico">🔑</span><span class="keytxt"><b>钥匙</b><span>KEY</span></span></button>
+<button class="btn keybtn" onclick="finish(1)"><span class="ico">🪞</span><span class="keytxt"><b>镜子</b><span>MIRROR</span></span></button>
+<button class="btn keybtn" onclick="finish(2)"><span class="ico">🔥</span><span class="keytxt"><b>火</b><span>FIRE</span></span></button>
+<button class="btn keybtn" onclick="finish(3)"><span class="ico">🌙</span><span class="keytxt"><b>月亮</b><span>MOON</span></span></button>
+</div>
+</div>
+</section>
+
+<section id="load" class="screen">
+<div class="box loaderBox">
+<div class="loaderCode">ARCHIVE RECOVERY // <span id="loadPct">00%</span></div>
+<div class="barbg"><div id="bar" class="bar"></div></div>
+<div id="loadStatus" class="loadStatus">正在定位世界线……</div>
+<div class="loadTrace"><span id="traceA">COORDINATE // --</span><span id="traceB">IDENTITY // SEARCHING</span></div>
+</div>
+</section>
+
 <section id="res" class="screen result"><div id="out"></div></section></div>
 <div id="modal" class="modal"><div class="modalin">
 <div class="modalTop"><button class="btn closeMini" onclick="modal.classList.remove('on')">关闭</button></div>
@@ -87,12 +157,53 @@ const places={city:["穹顶城 · 第三区","垂直城 · 118层","旧东京环
 let world="random",cur=null,place="",year=0,code="";
 function show(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");scrollTo(0,0)}
 function pick(a){return a[Math.floor(Math.random()*a.length)]}
-function finish(seed){show("load");setTimeout(()=>bar.style.width="100%",50);setTimeout(()=>make(seed),1050)}
+function finish(seed){
+  bar.style.width="0%";
+  loadPct.textContent="00%";
+  loadStatus.textContent="正在定位世界线……";
+  traceA.textContent="COORDINATE // "+(world==="city"?"CITY":world==="sea"?"OCEAN":world==="wild"?"WILDLAND":"UNKNOWN");
+  traceB.textContent="IDENTITY // SEARCHING";
+  show("load");
+  const states=[
+    [120,"18%","正在比对世界坐标……"],
+    [420,"46%","正在恢复身份记录……"],
+    [760,"73%","发现异常人生分支……"],
+    [1080,"92%","正在读取最终档案……"]
+  ];
+  states.forEach(([t,pct,msg])=>setTimeout(()=>{
+    bar.style.width=pct;
+    loadPct.textContent=pct;
+    loadStatus.textContent=msg;
+  },t));
+  setTimeout(()=>{
+    bar.style.width="100%";
+    loadPct.textContent="100%";
+    traceB.textContent="IDENTITY // FOUND";
+  },1320);
+  setTimeout(()=>make(seed),1580);
+}
 function make(seed){let pool=LIVES.filter((x,i)=>i%4===seed);cur=pick(pool);let w=world==="random"?pick(["city","sea","wild"]):world;place=pick(places[w]);year=2080+Math.floor(Math.random()*151);code="PL-"+String(Math.floor(Math.random()*999999)).padStart(6,"0");let age=29+Math.floor(Math.random()*24);
-out.innerHTML=`<img class="portrait" src="${cur.img}"><div style="padding:17px 0"><div class="tag">${code} // CITIZEN RECORD</div><div class="job">${Math.random()<.28?cur.altjob:cur.job}</div><div class="meta">${year} 年出生 · ${place}<br>当前档案年龄：${age} 岁</div></div>
+out.innerHTML=`
+<div class="resultHero">
+  <div class="resultEyebrow">ARCHIVE RECOVERED // ${code}</div>
+  <div class="muted">你在这条世界线的身份是</div>
+  <div class="resultJob">${Math.random()<.28?cur.altjob:cur.job}</div>
+  <div class="resultMeta">${year} 年出生 · ${place}<br>当前档案年龄：${age} 岁</div>
+  <img class="portrait resultPortrait" src="${cur.img}">
+</div>
 <div class="stats"><div class="stat">人生稀有度<b>${cur.rare}</b></div><div class="stat">身份可信度<b>${cur.trust}</b></div><div class="stat">危险程度<b>${cur.danger}</b></div><div class="stat">自由程度<b>${cur.freedom}</b></div></div>
-<div class="sec"><h3>01 // 你的世界</h3>${cur.world}</div><div class="sec"><h3>02 // 你靠什么生活</h3>${cur.work}</div><div class="sec"><h3>03 // 人生转折点</h3><div class="twist">${cur.event}</div></div><div class="sec"><h3>04 // 未公开记录</h3>${cur.secret}</div><div class="sec"><h3>05 // 档案结局</h3>${cur.ending}</div><div class="sec"><h3>遗留物</h3><div class="twist">${cur.legacy}</div></div>
-<div class="actions"><button class="btn primary" onclick="makeCard()">▣ 生成居民档案卡</button><button class="btn" onclick="bar.style.width='0';show('s1')">🎲 再活一次</button><div class="tiny">半格电 · 另一条人生 V1.9</div></div>`;show("res")}
+<div class="sec"><h3>01 // 你的世界</h3>${cur.world}</div>
+<div class="sec"><h3>02 // 你靠什么生活</h3>${cur.work}</div>
+<div class="sec"><h3>03 // 人生转折点</h3><div class="twist">${cur.event}</div></div>
+<div class="sec"><h3>04 // 未公开记录</h3>${cur.secret}</div>
+<div class="sec"><h3>05 // 档案结局</h3>${cur.ending}</div>
+<div class="sec"><h3>遗留物</h3><div class="twist">${cur.legacy}</div></div>
+<div class="actions">
+  <button class="btn primary" onclick="makeCard()">▣ 生成我的居民档案卡</button>
+  <button class="btn" onclick="bar.style.width='0';show('s1')">↻ 开启另一条人生</button>
+  <div class="ctaNote">每次调取都会重新生成世界坐标、年份与档案编号。</div>
+  <div class="tiny">半格电 · 另一条人生 V2.0</div>
+</div>`;show("res")}
 function wrap(ctx,t,x,y,max,lineH,maxLines=99){let arr=[],line="";for(let ch of t){let test=line+ch;if(ctx.measureText(test).width>max&&line){arr.push(line);line=ch}else line=test}if(line)arr.push(line);arr.slice(0,maxLines).forEach((a,i)=>ctx.fillText(a,x,y+i*lineH));return y+Math.min(arr.length,maxLines)*lineH}
 
 let cardDataUrl="";
