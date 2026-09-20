@@ -1,6 +1,13 @@
-半格电｜另一条人生 V1.4
+半格电｜另一条人生 V1.5
 
-用于 GitHub Pages 上传：
-- index.html 必须位于仓库根目录
-- assets 文件夹与 index.html 同级
-- 上传时请拖入 index.html、assets、README.txt，不要拖外层文件夹
+本版重点优化：
+1. 分享档案卡改为固定比例（3:4）手机海报，不再是很长的网页片段；
+2. 删除“本地试玩版”提示，改为正式分享文案；
+3. 弹窗按钮更精简；
+4. 新增“保存图片”按钮（基于 html2canvas）；
+5. 保留截图作为兜底方案。
+
+GitHub 上传说明：
+- 把 index.html、assets、README.txt 上传到仓库根目录；
+- 可直接覆盖旧版 index.html；
+- assets 文件夹保留不变。
