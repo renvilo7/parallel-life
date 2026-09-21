@@ -1,38 +1,64 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#070a0e"><title>另一条人生｜半格电</title>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070a0e">
+<title>另一条人生｜半格电</title>
 <style>
-:root{--bg:#070a0e;--panel:#10151c;--line:#29333d;--text:#edf2f3;--muted:#89949e;--a:#8fe3c2}
+:root{--bg:#070a0e;--panel:#10151c;--line:#29333d;--text:#edf2f3;--muted:#89949e;--a:#8fe3c2;--warn:#f1d58b}
 *{box-sizing:border-box}
 body{margin:0;background:radial-gradient(circle at 50% -10%,#18222d,#070a0e 45%);color:var(--text);font-family:ui-monospace,SFMono-Regular,Menlo,"Noto Sans SC",monospace}
 .wrap{max-width:720px;margin:auto;min-height:100vh;padding:22px 17px 44px}
 .top{display:flex;justify-content:space-between;color:#71808b;font-size:11px;letter-spacing:.1em}
-.brand{color:var(--a)}
+.brand,.accent{color:var(--a)}
 .screen{display:none;min-height:85vh}
 .active{display:flex;flex-direction:column;justify-content:center;animation:f .35s}
 h1{font-size:39px;line-height:1.1;margin:14px 0}
-h2{font-size:27px}
+h2{font-size:27px;line-height:1.3}
 .lead{line-height:1.8;color:#cbd2d7}
+.muted{color:var(--muted);line-height:1.75}
 .btn{width:100%;padding:16px;border:1px solid var(--line);border-radius:13px;background:#111821;color:white;font:inherit;font-size:16px;margin-top:10px;cursor:pointer}
-.btn:hover{border-color:#44606a}
 .btn:active{border-color:var(--a)}
 .primary{background:var(--a);color:#06100c;border-color:var(--a);font-weight:800;text-align:center}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.sym{font-size:28px;text-align:center;padding:21px}
 .box{border:1px solid var(--line);border-radius:17px;padding:19px;background:#0d131a}
+.heroCode,.step{color:var(--a);font-size:10px;letter-spacing:.16em;margin-bottom:7px}
+.heroNote{margin-top:18px;padding-top:14px;border-top:1px solid #1d2730;color:#687681;font-size:11px;line-height:1.7}
 .barbg{height:6px;background:#1a222b;border-radius:9px;overflow:hidden}
-.bar{height:100%;width:0;background:var(--a);transition:1s}
-.result{justify-content:flex-start;padding-top:25px}
-.portrait{width:100%;aspect-ratio:1.45/1;object-fit:cover;object-position:center 22%;border:1px solid var(--line);border-radius:15px;filter:saturate(.72) contrast(1.04)}
-.tag{color:var(--a);font-size:11px;letter-spacing:.12em}
-.job{font-size:35px;font-weight:900;margin:8px 0}
-.meta,.muted{color:var(--muted);line-height:1.75}
+.bar{height:100%;width:0;background:var(--a);transition:.65s}
+.loadStatus{min-height:52px;font-size:16px;line-height:1.7;color:#dbe2e6;margin-top:16px}
+.loadTrace{display:flex;justify-content:space-between;color:#5f6d78;font-size:10px;margin-top:10px}
+.identity{justify-content:flex-start;padding-top:24px}
+.identityCard{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#0d131a}
+.portrait{width:100%;aspect-ratio:1.45/1;object-fit:cover;object-position:center 22%;display:block;filter:saturate(.74) contrast(1.04)}
+.identityBody{padding:18px}
+.eyebrow{color:var(--a);font-size:10px;letter-spacing:.15em;margin-bottom:7px}
+.job{font-size:34px;font-weight:900;line-height:1.08;margin:0 0 8px}
+.meta{color:#8e9aa4;line-height:1.65;font-size:14px}
+.worldIntro{margin-top:15px;padding-top:15px;border-top:1px solid #202a34;line-height:1.8;color:#cbd2d7}
+.alert{margin-top:14px;border:1px solid #4d4a35;background:#17160f;border-radius:14px;padding:15px}
+.alert .label{color:var(--warn);font-size:10px;letter-spacing:.14em;margin-bottom:8px}
+.alert .event{font-size:17px;font-weight:700;line-height:1.75}
+.choiceTitle{margin-top:18px;color:#93a0aa;font-size:12px}
+.choice{position:relative;text-align:left;padding:16px 16px 16px 46px;line-height:1.55}
+.choice:before{position:absolute;left:16px;top:16px;color:var(--a);font-size:12px}
+.choice[data-n="0"]:before{content:"A"}
+.choice[data-n="1"]:before{content:"B"}
+.choice small{display:block;color:#697681;margin-top:4px}
+.result{justify-content:flex-start;padding-top:24px}
+.resultHero{padding-bottom:15px}
+.resultJob{font-size:36px;font-weight:900;margin:4px 0 8px}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0}
 .stat{border:1px solid #202a34;background:#0d131a;border-radius:11px;padding:12px}
 .stat b{display:block;font-size:19px;margin-top:4px}
-.sec{padding:21px 0;border-top:1px solid var(--line);line-height:1.9}
-.sec h3{color:var(--a);font-size:15px;margin:0 0 8px}
+.sec{padding:20px 0;border-top:1px solid var(--line);line-height:1.9}
+.sec h3{color:var(--a);font-size:14px;margin:0 0 8px}
 .twist{font-size:18px;font-weight:700}
+.choiceResult{border-left:3px solid var(--a);padding-left:14px}
+.choiceResult .picked{color:var(--a);font-size:13px;margin-bottom:7px}
+.choiceResult .aftermath{font-size:18px;font-weight:700;line-height:1.8}
 .actions{padding:18px 0}
-.tiny{text-align:center;color:#65717c;font-size:11px;margin-top:15px}
+.tiny,.ctaNote{text-align:center;color:#65717c;font-size:11px;line-height:1.7;margin-top:12px}
 .modal{display:none;position:fixed;inset:0;background:#000d;z-index:9;padding:14px;overflow:auto}
 .modal.on{display:block}
 .modalin{max-width:520px;margin:0 auto}
@@ -41,317 +67,341 @@ h2{font-size:27px}
 .helper{font-size:13px;line-height:1.7;color:#c4ced4;margin:0 0 10px;text-align:center}
 .tip{font-size:12px;color:#7f8a94;text-align:center;margin-top:8px}
 .cardpreview{display:block;width:100%;max-width:100%;height:auto;border-radius:16px;border:1px solid #35414c;background:#080b0e}
-.scan{position:fixed;left:0;right:0;height:1px;background:#9fffd944;animation:scan 6s linear infinite;pointer-events:none}
-@keyframes scan{from{top:0}to{top:100vh}}
-@keyframes f{from{opacity:0;transform:translateY(7px)}to{opacity:1}}
-@media(max-width:420px){h1{font-size:34px}.job{font-size:31px}.wrap{padding:18px 14px 36px}}
-
-.sharecard{background:#080b0e;border:1px solid #3a444d;border-radius:18px;overflow:hidden;color:#edf2f3;box-shadow:0 18px 60px #0008;aspect-ratio:3/4;display:flex;flex-direction:column}
-.sc-head{padding:14px 16px;border-bottom:1px solid #29333d;display:flex;justify-content:space-between;gap:10px;font-size:11px;letter-spacing:.1em;color:#8fe3c2;flex:0 0 auto}
-.sc-img{width:100%;height:36%;object-fit:cover;object-position:center 20%;display:block;filter:saturate(.82) contrast(1.04);flex:0 0 auto}
-.sc-body{padding:13px 16px 14px;display:flex;flex-direction:column;gap:8px;flex:1;min-height:0}
-.sc-job{font-size:28px;font-weight:900;line-height:1.1;margin:1px 0 3px}
-.sc-meta{color:#99a4ad;line-height:1.45;font-size:13px}
-.sc-data{display:grid;grid-template-columns:1fr 1fr;gap:7px}
-.sc-cell{border:1px solid #29333d;border-radius:9px;padding:7px 8px;font-size:10px;color:#9aa5ad;background:rgba(255,255,255,.015)}
-.sc-cell b{display:block;color:#f2f5f5;font-size:16px;margin-top:3px}
-.sc-label{color:#8fe3c2;font-size:10px;letter-spacing:.12em;margin-top:1px}
-.sc-story{font-size:13px;line-height:1.5}.sc-relic{font-size:13px;line-height:1.5}
-.clamp2,.clamp3{display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
-.clamp2{-webkit-line-clamp:2}
-.clamp3{-webkit-line-clamp:3}
-.eventBox{border-left:2px solid #8fe3c2;padding-left:10px;margin-top:1px}
-
-.sc-foot{border-top:1px solid #29333d;margin-top:auto;padding-top:8px;color:#66727c;font-size:9px;display:flex;justify-content:space-between;gap:10px}
 .saveRow{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
-.secondary{text-align:center}
+.scan{position:fixed;left:0;right:0;height:1px;background:#9fffd944;animation:scan 6s linear infinite;pointer-events:none}
+@keyframes scan{from{top:0}to{top:100vh}}@keyframes f{from{opacity:0;transform:translateY(7px)}to{opacity:1}}
+@media(max-width:420px){h1{font-size:34px}.job{font-size:31px}.resultJob{font-size:33px}.wrap{padding:18px 14px 36px}}
+</style>
+</head>
+<body>
+<div class="scan"></div>
+<div class="wrap">
+  <div class="top"><span class="brand">半格电 // HALF BATTERY</span><span>PARALLEL ARCHIVE</span></div>
 
-.heroCode{display:flex;gap:8px;align-items:center;color:#65717c;font-size:10px;letter-spacing:.12em;margin-bottom:8px}
-.heroCode:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--a);box-shadow:0 0 14px #8fe3c288}
-.heroNote{margin-top:18px;padding-top:14px;border-top:1px solid #1d2730;color:#687681;font-size:11px;line-height:1.7}
-.step{color:var(--a);font-size:10px;letter-spacing:.16em;margin-bottom:6px}
-.choiceHint{color:#78858f;font-size:12px;line-height:1.7;margin:0 0 12px}
-.keygrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.keybtn{display:flex;align-items:center;gap:12px;text-align:left;padding:16px}
-.keybtn .ico{font-size:28px;line-height:1}
-.keybtn .keytxt{display:flex;flex-direction:column;gap:2px}
-.keybtn .keytxt b{font-size:14px}
-.keybtn .keytxt span{font-size:10px;color:#71808b;letter-spacing:.08em}
-.loaderBox{position:relative;overflow:hidden}
-.loaderCode{font-size:11px;color:#8fe3c2;letter-spacing:.12em;margin-bottom:13px}
-.loadStatus{min-height:54px;font-size:16px;line-height:1.7;color:#dbe2e6;margin-top:16px}
-.loadTrace{display:flex;justify-content:space-between;color:#5f6d78;font-size:10px;margin-top:10px}
-.resultHero{padding:2px 0 15px}
-.resultEyebrow{color:#8fe3c2;font-size:10px;letter-spacing:.15em;margin-bottom:8px}
-.resultJob{font-size:38px;font-weight:900;line-height:1.08;margin:0 0 8px}
-.resultMeta{color:#8e9aa4;line-height:1.65;font-size:14px}
-.resultPortrait{margin-top:14px}
-.ctaNote{text-align:center;color:#697681;font-size:11px;line-height:1.7;margin:10px 0 0}
-@media(max-width:420px){
- .resultJob{font-size:34px}
- .keybtn{padding:14px 12px}
- .keybtn .ico{font-size:25px}
-}
+  <section id="s0" class="screen active">
+    <div class="heroCode">UNRESOLVED IDENTITY // DECISION REQUIRED</div>
+    <div class="muted">ANOTHER LIFE FOUND</div>
+    <h1>系统找到了一条<br>本不属于你的人生。</h1>
+    <p class="lead">先看看你在那个世界是谁。然后，替那个“你”做一次决定。</p>
+    <button class="btn primary" onclick="startLife()">调取我的身份</button>
+    <div class="heroNote">无需登录 · 1 次真正选择 · 大约 15 秒<br>你的决定会改变最终结局。</div>
+  </section>
 
-</style></head><body><div class="scan"></div><div class="wrap"><div class="top"><span class="brand">半格电 // HALF BATTERY</span><span>PARALLEL ARCHIVE</span></div>
-<section id="s0" class="screen active">
-<div class="heroCode">UNRESOLVED IDENTITY // WORLDLINE UNKNOWN</div>
-<div class="muted">ANOTHER LIFE FOUND</div>
-<h1>这个世界之外，<br>还有一份你的档案。</h1>
-<p class="lead">它记录了你没有走过的城市、职业和结局。系统只能恢复其中一条世界线。</p>
-<button class="btn primary" onclick="show('s1')">调取我的档案</button>
-<div class="heroNote">无需登录 · 两次选择 · 大约 10 秒<br>每次调取，都可能得到另一条人生。</div>
-</section>
+  <section id="load" class="screen">
+    <div class="box">
+      <div class="heroCode">ARCHIVE RECOVERY // <span id="loadPct">00%</span></div>
+      <div class="barbg"><div id="bar" class="bar"></div></div>
+      <div id="loadStatus" class="loadStatus">正在搜索异常世界线……</div>
+      <div class="loadTrace"><span>WORLDLINE // UNKNOWN</span><span id="traceB">IDENTITY // SEARCHING</span></div>
+    </div>
+  </section>
 
-<section id="s1" class="screen">
-<div class="box">
-<div class="step">01 // WORLD COORDINATE</div>
-<div class="muted">先确定世界坐标</div>
-<h2>哪一个地方最先让你想走进去？</h2>
-<p class="choiceHint">别分析，第一感觉就够了。</p>
-<button class="btn" onclick="world='city';show('s2')">🌆　巨型城市 <span class="muted">· 垂直建筑 / 霓虹 / 人群</span></button>
-<button class="btn" onclick="world='sea';show('s2')">🌊　海上世界 <span class="muted">· 漂流城邦 / 深海 / 港口</span></button>
-<button class="btn" onclick="world='wild';show('s2')">🌲　荒野边境 <span class="muted">· 无人区 / 废墟 / 风</span></button>
-<button class="btn" onclick="world='random';show('s2')">🎲　坐标未知 <span class="muted">· 交给系统决定</span></button>
+  <section id="decision" class="screen identity"><div id="decisionOut"></div></section>
+  <section id="res" class="screen result"><div id="out"></div></section>
 </div>
-</section>
 
-<section id="s2" class="screen">
-<div class="box">
-<div class="step">02 // ARCHIVE KEY</div>
-<div class="muted">档案已经锁定</div>
-<h2>选择最后一枚解锁密钥。</h2>
-<p class="choiceHint">没有正确答案。选你第一眼注意到的那个。</p>
-<div class="keygrid">
-<button class="btn keybtn" onclick="finish(0)"><span class="ico">🔑</span><span class="keytxt"><b>钥匙</b><span>KEY</span></span></button>
-<button class="btn keybtn" onclick="finish(1)"><span class="ico">🪞</span><span class="keytxt"><b>镜子</b><span>MIRROR</span></span></button>
-<button class="btn keybtn" onclick="finish(2)"><span class="ico">🔥</span><span class="keytxt"><b>火</b><span>FIRE</span></span></button>
-<button class="btn keybtn" onclick="finish(3)"><span class="ico">🌙</span><span class="keytxt"><b>月亮</b><span>MOON</span></span></button>
-</div>
-</div>
-</section>
-
-<section id="load" class="screen">
-<div class="box loaderBox">
-<div class="loaderCode">ARCHIVE RECOVERY // <span id="loadPct">00%</span></div>
-<div class="barbg"><div id="bar" class="bar"></div></div>
-<div id="loadStatus" class="loadStatus">正在定位世界线……</div>
-<div class="loadTrace"><span id="traceA">COORDINATE // --</span><span id="traceB">IDENTITY // SEARCHING</span></div>
-</div>
-</section>
-
-<section id="res" class="screen result"><div id="out"></div></section></div>
 <div id="modal" class="modal"><div class="modalin">
-<div class="modalTop"><button class="btn closeMini" onclick="modal.classList.remove('on')">关闭</button></div>
-<p class="helper">你的另一条人生已归档。保存这张居民档案卡。</p>
-<img id="sharePreview" class="cardpreview" alt="居民档案卡">
-<div class="saveRow">
-<button class="btn primary" onclick="saveCard()">保存图片</button>
-<button class="btn secondary" onclick="modal.classList.remove('on')">返回档案</button>
-</div>
-<div class="tip">如果浏览器没有自动下载图片，可以长按或截图保存。</div>
+  <div class="modalTop"><button class="btn closeMini" onclick="modal.classList.remove('on')">关闭</button></div>
+  <p class="helper">这条人生已经归档。保存你的最终档案。</p>
+  <img id="sharePreview" class="cardpreview" alt="居民档案卡">
+  <div class="saveRow">
+    <button class="btn primary" onclick="saveCard()">保存图片</button>
+    <button class="btn" onclick="modal.classList.remove('on')">返回档案</button>
+  </div>
+  <div class="tip">如果浏览器没有自动下载图片，可以长按或截图保存。</div>
 </div></div>
+
 <script>
 const LIVES=[{"id": "mirror", "job": "镜像替身演员", "altjob": "镜面异常代理人", "world": "2191 年，人类证明镜子里的自己并不总是在模仿你。大型私人镜面随后被严格限制。", "work": "你替高风险客户进入受控镜室。如果镜中的“你”做出不同动作，你负责记录；如果它开口，立即离开。", "event": "工作第 11 年，镜中的你在玻璃上写下你的出生年份。你查到：那一年，这座城市没有你的出生记录。", "secret": "你偷偷进入 27 间镜室。每一面镜子里的你都认识你，而且它们似乎认为你才是镜像。", "ending": "你最后一次走出镜室后，DNA、指纹全部一致，唯一变化是从右利手变成了左利手。", "legacy": "一面从来不映出任何人的镜子", "trust": "50.0%", "rare": "0.31%", "danger": "★★★★☆", "freedom": "★★☆☆☆", "img": "assets/char_01.jpg"}, {"id": "memory", "job": "记忆销毁员", "altjob": "遗忘服务技师", "world": "这个世界允许成年人合法删除痛苦记忆，遗忘成为一种公共服务。", "work": "你删除客户主动放弃的记忆：失恋、死亡、战争和秘密。", "event": "一位客人删除了 32 年记忆。操作结束后你才发现，那 32 年里全部都是你。", "secret": "你发现所谓“永久删除”的 4,721 份记忆其实仍被秘密保存。", "ending": "43 岁后官方档案中断。废弃区开始流传一个免费替人恢复记忆的人。", "legacy": "4,721 段本应消失的陌生人记忆", "trust": "91%", "rare": "0.58%", "danger": "★★☆☆☆", "freedom": "★★★★☆", "img": "assets/char_02.jpg"}, {"id": "key", "job": "禁门钥匙保管员", "altjob": "封闭区域管理员", "world": "城市有 143 扇法律规定永远不能打开的门，每扇门都有一把真实存在的钥匙。", "work": "你每月确认 143 把钥匙仍然存在，并签字证明没有门被打开。", "event": "第 9 年，你清点出了第 144 把钥匙。钥匙柄刻着你家的地址。", "secret": "你第一次发现卧室衣柜后的墙比建筑图纸厚 73 厘米。", "ending": "第二天禁门数量变成 144，你的住址则从所有公开地图上消失。", "legacy": "一把没有编号、至今仍在流通的钥匙", "trust": "88%", "rare": "0.83%", "danger": "★★★☆☆", "freedom": "★★★☆☆", "img": "assets/char_03.jpg"}, {"id": "signal", "job": "失联文明接线员", "altjob": "夜间信号监听员", "world": "人类在太阳系建立了 36 个永久居住点，但每天仍有少量通讯信号找不到发送者。", "work": "你只在夜间工作，监听无法识别来源的窄带信号。职业守则第一条：不要回复。", "event": "你听见一个声音连续报出未来日期。最后一个日期是明天。第二天什么也没发生。", "secret": "重新播放录音时，你听见日期后还有一句：因为你听见了，所以没有发生。", "ending": "23 年间你记录了 81 次从未发生的灾难。没人知道是不是你阻止了它们。", "legacy": "81 个不存在的历史事件", "trust": "86%", "rare": "0.19%", "danger": "★★★☆☆", "freedom": "★★★★★", "img": "assets/char_04.jpg"}, {"id": "dream", "job": "梦境取证员", "altjob": "睡眠现场调查员", "world": "法院承认梦境可以作为有限证据，但必须由持证取证员进入当事人的睡眠记录。", "work": "你寻找梦里被篡改的细节，判断一段记忆究竟来自现实还是植入。", "event": "一次取证中，你在陌生人的梦里看见了自己童年的卧室，连墙上的裂缝都完全一致。", "secret": "之后你在 14 个互不认识的人梦里发现同一间房。", "ending": "官方认定这是群体性记忆污染；你却在现实中找到了那间房的地址。", "legacy": "一张从梦里带回现实的门票", "trust": "73%", "rare": "0.44%", "danger": "★★★☆☆", "freedom": "★★★☆☆", "img": "assets/char_05.jpg"}, {"id": "weather", "job": "天气修复师", "altjob": "局部气候技师", "world": "极端气候后，大城市开始人工维护天气。晴天、降雨和风都成为基础设施。", "work": "你负责修复失控的局部天气，让一条街重新下雨，或让一片云离开机场。", "event": "某天系统要求你修复一场持续 17 年、只落在一栋废弃房屋上的雨。", "secret": "进入房屋后，你发现雨水从屋内向天空落去。", "ending": "你关闭设备后，那片区域第一次放晴；同一天，全球气象数据库丢失了 17 年记录。", "legacy": "装着最后一滴逆向雨水的玻璃瓶", "trust": "95%", "rare": "0.67%", "danger": "★★☆☆☆", "freedom": "★★★★☆", "img": "assets/char_06.jpg"}, {"id": "time", "job": "时间遗物鉴定员", "altjob": "异常年代鉴定师", "world": "考古队偶尔会挖出制造日期晚于出土日期的物品，它们被称为时间遗物。", "work": "你鉴定这些东西是否来自未来，并确定它们原本属于哪个年代。", "event": "你收到一块损坏的旧表，生产日期是 18 年后，背面刻着你的名字。", "secret": "表内部保存着一张只有你和一个陌生人的合照。", "ending": "你一直没有见过照片中的人，直到退休当天有人敲响办公室的门。", "legacy": "一块始终快 18 年的手表", "trust": "82%", "rare": "0.52%", "danger": "★★☆☆☆", "freedom": "★★★★☆", "img": "assets/char_07.jpg"}, {"id": "ruin", "job": "废弃城市管理员", "altjob": "无人区维护员", "world": "人口迁移后，旧大陆留下大量完整却无人居住的城市。法律要求它们在拆除前继续维持最低运行。", "work": "你独自维护一座没有居民的城市：路灯、地铁、广播和红绿灯仍按时工作。", "event": "第 6 年，你发现每天凌晨 02:17 都有人按下同一个人行横道按钮。", "secret": "监控从未拍到任何人，但按钮周围开始出现越来越多脚印。", "ending": "你申请关闭城市，系统回复：申请驳回，当前登记居民数 1。", "legacy": "一张只写着你名字的城市人口表", "trust": "77%", "rare": "0.91%", "danger": "★★☆☆☆", "freedom": "★★★★★", "img": "assets/char_08.jpg"}, {"id": "moon", "job": "人工月亮维护员", "altjob": "轨道照明工程师", "world": "真正的月亮因轨道事故不再可见，人类用 19 颗反射卫星维持夜间月光。", "work": "你负责校准人工月亮，让不同城市在正确时间拥有月相。", "event": "一次维修时，你发现第 20 个未登记光源正在模仿整个月相系统。", "secret": "它没有轨道编号，也没有任何国家承认发射过它。", "ending": "三个月后它突然熄灭。那一夜，真正的月亮在天空中出现了 11 分钟。", "legacy": "第 20 颗月亮掉落的一小片反射材料", "trust": "93%", "rare": "0.26%", "danger": "★★★★☆", "freedom": "★★★★☆", "img": "assets/char_09.jpg"}, {"id": "archive", "job": "历史漏洞调查员", "altjob": "档案矛盾审计员", "world": "所有公共历史被数字化后，系统开始自动标记互相矛盾的史料。极少数矛盾无法解释。", "work": "你调查那些“不可能同时为真”的历史记录，并决定哪一个版本被保留。", "event": "你发现一场著名事故同时存在两份完整记录：一份死了 312 人，一份无人死亡。", "secret": "两个版本里的幸存者都还活着，并且都记得自己的版本。", "ending": "你拒绝删除任何一份记录。第二天系统把你标记为“历史矛盾”。", "legacy": "两份都盖有真章的死亡名单", "trust": "61%", "rare": "0.38%", "danger": "★★★☆☆", "freedom": "★★☆☆☆", "img": "assets/char_10.jpg"}, {"id": "relic", "job": "陌生人记忆保管员", "altjob": "私人记忆仓库管理员", "world": "人们可以在生前寄存一段记忆，指定多年后交给一个尚未认识的人。", "work": "你保管这些延迟送达的记忆，并在指定日期寻找收件人。", "event": "一份封存 63 年的记忆指定你本人为收件人，而寄存日期早于你出生。", "secret": "记忆内容只是一个陌生人坐在海边等你，并反复说：这次不要迟到。", "ending": "你按记忆中的地点去了海边。那里已经有人等了 63 年。", "legacy": "一段没有寄件人姓名的海浪声", "trust": "89%", "rare": "0.63%", "danger": "★☆☆☆☆", "freedom": "★★★★☆", "img": "assets/char_11.jpg"}, {"id": "deep", "job": "深海灯塔守望员", "altjob": "海底航标维护员", "world": "海平面上升后，大量城市沉入海底。旧航道仍由自动灯塔标记，以避免潜航器进入遗迹。", "work": "你驻守最深的一座灯塔，每 90 天才有人来换班。", "event": "某晚，灯塔下方亮起了另一束光，并用古老航海信号向你发送：请关灯。", "secret": "档案显示，那下面曾经有一座城市，但它已经沉没 146 年。", "ending": "你没有关灯。第二天声呐显示海底城市的街道上出现了移动目标。", "legacy": "一盏从未被海水熄灭的旧式航灯", "trust": "84%", "rare": "0.74%", "danger": "★★★★☆", "freedom": "★★★★★", "img": "assets/char_12.jpg"}];
-const places={city:["穹顶城 · 第三区","垂直城 · 118层","旧东京环城 · 北区"],sea:["漂流城邦 · 东七码头","太平洋浮岛群 · 17区","深蓝自治港"],wild:["北纬无人区 · 04站","旧大陆生态禁区","风蚀荒原 · 边境站"]};
-let world="random",cur=null,place="",year=0,code="";
-function show(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");scrollTo(0,0)}
+
+const CHOICES={
+ mirror:{
+   prompt:"镜中的你写下了你的出生年份。更诡异的是，这座城市根本没有你的出生记录。",
+   options:[
+     {label:"在玻璃上写下自己的名字", short:"回应镜中的自己", outcome:"镜中的你先笑了，然后擦掉你的名字，重新写下四个字：终于回来了。你离开镜室后，所有证件都还有效，但照片里的你开始看向相反的方向。", danger:1, freedom:0},
+     {label:"立刻离开，不再回头", short:"离开镜室", outcome:"你按规定离开，并申请永久调岗。三天后，你家里所有镜子都只映出一间空房——唯独那间房里没有你。", danger:0, freedom:1}
+   ]
+ },
+ memory:{
+   prompt:"客户主动删除的 32 年记忆里，每一年都有你。但你从未见过这个人。",
+   options:[
+     {label:"偷偷恢复其中一段记忆", short:"恢复一段记忆", outcome:"你只恢复了 47 秒。画面里，对方站在你的葬礼上。日期是 19 年后。", danger:1, freedom:0},
+     {label:"按流程彻底删除", short:"执行删除", outcome:"你完成了删除。第二天醒来，你发现自己也少了 47 秒记忆，而床边多了一张那位客户的照片。", danger:0, freedom:1}
+   ]
+ },
+ key:{
+   prompt:"你清点出了第 144 把钥匙。钥匙柄上刻着你家的地址，而官方档案里只有 143 扇禁门。",
+   options:[
+     {label:"回家，用它打开那扇不存在的门", short:"打开第 144 扇门", outcome:"门后不是房间，而是一条与你家完全相同的走廊。尽头站着另一个你，手里拿着第 145 把钥匙。", danger:1, freedom:1},
+     {label:"把钥匙封存，向上级报告", short:"封存钥匙", outcome:"你提交了异常报告。第二天系统回复：第 144 把钥匙从未存在。可你的住址也同时从地图上消失了。", danger:0, freedom:-1}
+   ]
+ },
+ signal:{
+   prompt:"失联信号连续报出未来的灾难日期，最后一个日期是明天。职业守则第一条：不要回复。",
+   options:[
+     {label:"第一次违反守则，回复“你是谁？”", short:"回复信号", outcome:"对方只回了一句：终于轮到你了。第二天没有灾难发生，但系统里多出了一条来自你的未来录音。", danger:1, freedom:1},
+     {label:"保持沉默，继续监听", short:"保持沉默", outcome:"第二天什么也没发生。重新播放录音时，最后却多出一句：因为你没有回答，所以这次取消。", danger:0, freedom:0}
+   ]
+ },
+ dream:{
+   prompt:"你在 14 个互不认识的人的梦里，看见了同一间属于你童年的卧室。",
+   options:[
+     {label:"沿着梦里的门继续往里走", short:"进入那扇门", outcome:"门后不是梦，而是一条真实街道。你醒来后按门牌找到那里，屋主开门第一句话是：你终于又梦回来了。", danger:1, freedom:1},
+     {label:"立即退出并标记为污染梦境", short:"退出梦境", outcome:"你切断连接。此后 14 个人再也没梦到那间房，但你每天晚上都会梦见他们站在你的卧室门外。", danger:0, freedom:-1}
+   ]
+ },
+ weather:{
+   prompt:"系统要求你修复一场持续 17 年、只落在一栋废弃房屋上的雨。屋内的雨却在向天空落去。",
+   options:[
+     {label:"关闭这片区域的天气系统", short:"关闭逆向雨", outcome:"雨停了。当天全球气象数据库凭空少了 17 年记录，而你是唯一记得那些天气的人。", danger:0, freedom:1},
+     {label:"走进房屋，寻找雨的源头", short:"进入废屋", outcome:"地下室里没有机器，只有一张不断渗水的旧照片。照片中的你正站在 17 年前的这栋房子前。", danger:1, freedom:0}
+   ]
+ },
+ time:{
+   prompt:"你收到一块制造于 18 年后的手表。背面刻着你的名字，内部还有你和陌生人的合照。",
+   options:[
+     {label:"戴上它，让它继续走", short:"戴上未来手表", outcome:"秒针开始倒转。你手机里突然出现 18 年后的 23 条未读消息，其中最后一条只有一句：别去退休那天的办公室。", danger:1, freedom:1},
+     {label:"把它封进时间遗物库", short:"封存手表", outcome:"你没有再碰它。18 年后退休那天，库房自动解封，手表正好走到你第一次收到它的那一分钟。", danger:0, freedom:0}
+   ]
+ },
+ ruin:{
+   prompt:"无人城市里，每天凌晨 02:17 都有人按下同一个人行横道按钮。监控里却从来没有人。",
+   options:[
+     {label:"02:17 亲自站在路口等", short:"去路口等待", outcome:"按钮准时被按下。你身边空无一人，但斑马线上出现第二个人的脚印，一直延伸到你的影子里。", danger:1, freedom:0},
+     {label:"关闭整个街区的电力", short:"关闭街区", outcome:"02:17，整个城市都黑了。只有那个按钮自己亮起，广播随后响起：登记居民 2 人，请勿关闭公共设施。", danger:0, freedom:-1}
+   ]
+ },
+ moon:{
+   prompt:"你发现了第 20 个未登记的“月亮”光源。它正在精确模仿整套人工月相系统。",
+   options:[
+     {label:"改变轨道，靠近它", short:"接近第 20 个月亮", outcome:"距离缩短后，它停止模仿。你第一次看清，那不是卫星，而是一面巨大的镜子——镜中有真正的月亮。", danger:1, freedom:1},
+     {label:"假装没发现，继续校准", short:"继续工作", outcome:"三个月后它自己熄灭。那一夜，真正的月亮在天空出现了 11 分钟，而系统记录显示你早就申请过这次停机。", danger:0, freedom:0}
+   ]
+ },
+ archive:{
+   prompt:"同一场事故存在两份都完整可信的历史：一份死了 312 人，一份无人死亡。两边的幸存者都还活着。",
+   options:[
+     {label:"保留两个版本，拒绝删除", short:"保留两段历史", outcome:"第二天，系统把你本人标记成“历史矛盾”。从此任何数据库查询你，都会得到两个不同的人生版本。", danger:1, freedom:1},
+     {label:"强制选择一个版本作为真相", short:"删除一个版本", outcome:"你按规定删除了一份历史。当天晚上，被删除版本里的 312 名死者同时给档案局打来了电话。", danger:1, freedom:-1}
+   ]
+ },
+ relic:{
+   prompt:"一份封存 63 年的记忆指定你本人为收件人，可寄存日期早于你出生。",
+   options:[
+     {label:"现在就打开这段记忆", short:"打开记忆", outcome:"画面里，一个陌生人在海边等你，只说：这次不要迟到。你按地点赶去时，对方已经在那里等了 63 年。", danger:0, freedom:1},
+     {label:"拒绝接收，把它退回仓库", short:"拒绝记忆", outcome:"系统拒绝退件：寄件人和收件人都是你。当天夜里，你第一次梦见一片从没去过的海。", danger:0, freedom:0}
+   ]
+ },
+ deep:{
+   prompt:"灯塔下方，一座已经沉没 146 年的城市用古老航海信号向你发送：请关灯。",
+   options:[
+     {label:"关掉灯塔", short:"关灯", outcome:"海面彻底黑下去。12 秒后，城市深处亮起成千上万盏灯，一条航道从海底一直延伸到你脚下。", danger:1, freedom:1},
+     {label:"继续让灯亮着", short:"保持灯塔", outcome:"你没有关灯。第二天声呐显示海底街道上出现大量移动目标，而它们都在避开灯光。", danger:0, freedom:0}
+   ]
+ }
+};
+
+const places=[
+ "穹顶城 · 第三区","垂直城 · 118层","旧东京环城 · 北区",
+ "漂流城邦 · 东七码头","太平洋浮岛群 · 17区","深蓝自治港",
+ "北纬无人区 · 04站","旧大陆生态禁区","风蚀荒原 · 边境站"
+];
+
+let cur=null,branch=null,place="",year=0,code="",age=0,displayJob="",cardDataUrl="";
+
+function show(id){
+  document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  scrollTo(0,0);
+}
 function pick(a){return a[Math.floor(Math.random()*a.length)]}
-function finish(seed){
+function starsToN(s){return (s.match(/★/g)||[]).length}
+function clamp(n){return Math.max(1,Math.min(5,n))}
+
+function startLife(){
+  cur=pick(LIVES);
+  branch=null;
+  place=pick(places);
+  year=2080+Math.floor(Math.random()*151);
+  age=29+Math.floor(Math.random()*24);
+  code="PL-"+String(Math.floor(Math.random()*999999)).padStart(6,"0");
+  displayJob=Math.random()<.28?cur.altjob:cur.job;
+
   bar.style.width="0%";
   loadPct.textContent="00%";
-  loadStatus.textContent="正在定位世界线……";
-  traceA.textContent="COORDINATE // "+(world==="city"?"CITY":world==="sea"?"OCEAN":world==="wild"?"WILDLAND":"UNKNOWN");
+  loadStatus.textContent="正在搜索异常世界线……";
   traceB.textContent="IDENTITY // SEARCHING";
   show("load");
   const states=[
-    [120,"18%","正在比对世界坐标……"],
-    [420,"46%","正在恢复身份记录……"],
-    [760,"73%","发现异常人生分支……"],
-    [1080,"92%","正在读取最终档案……"]
+    [120,"21%","正在定位世界坐标……"],
+    [430,"49%","正在恢复身份记录……"],
+    [760,"78%","检测到关键人生节点……"],
+    [1040,"94%","等待你接管这条世界线……"]
   ];
-  states.forEach(([t,pct,msg])=>setTimeout(()=>{
-    bar.style.width=pct;
-    loadPct.textContent=pct;
-    loadStatus.textContent=msg;
+  states.forEach(([t,p,m])=>setTimeout(()=>{
+    bar.style.width=p;loadPct.textContent=p;loadStatus.textContent=m;
   },t));
-  setTimeout(()=>{
-    bar.style.width="100%";
-    loadPct.textContent="100%";
-    traceB.textContent="IDENTITY // FOUND";
-  },1320);
-  setTimeout(()=>make(seed),1580);
+  setTimeout(()=>{bar.style.width="100%";loadPct.textContent="100%";traceB.textContent="IDENTITY // FOUND"},1260);
+  setTimeout(renderDecision,1450);
 }
-function make(seed){let pool=LIVES.filter((x,i)=>i%4===seed);cur=pick(pool);let w=world==="random"?pick(["city","sea","wild"]):world;place=pick(places[w]);year=2080+Math.floor(Math.random()*151);code="PL-"+String(Math.floor(Math.random()*999999)).padStart(6,"0");let age=29+Math.floor(Math.random()*24);
-out.innerHTML=`
-<div class="resultHero">
-  <div class="resultEyebrow">ARCHIVE RECOVERED // ${code}</div>
-  <div class="muted">你在这条世界线的身份是</div>
-  <div class="resultJob">${Math.random()<.28?cur.altjob:cur.job}</div>
-  <div class="resultMeta">${year} 年出生 · ${place}<br>当前档案年龄：${age} 岁</div>
-  <img class="portrait resultPortrait" src="${cur.img}">
-</div>
-<div class="stats"><div class="stat">人生稀有度<b>${cur.rare}</b></div><div class="stat">身份可信度<b>${cur.trust}</b></div><div class="stat">危险程度<b>${cur.danger}</b></div><div class="stat">自由程度<b>${cur.freedom}</b></div></div>
-<div class="sec"><h3>01 // 你的世界</h3>${cur.world}</div>
-<div class="sec"><h3>02 // 你靠什么生活</h3>${cur.work}</div>
-<div class="sec"><h3>03 // 人生转折点</h3><div class="twist">${cur.event}</div></div>
-<div class="sec"><h3>04 // 未公开记录</h3>${cur.secret}</div>
-<div class="sec"><h3>05 // 档案结局</h3>${cur.ending}</div>
-<div class="sec"><h3>遗留物</h3><div class="twist">${cur.legacy}</div></div>
-<div class="actions">
-  <button class="btn primary" onclick="makeCard()">▣ 生成我的居民档案卡</button>
-  <button class="btn" onclick="bar.style.width='0';show('s1')">↻ 开启另一条人生</button>
-  <div class="ctaNote">每次调取都会重新生成世界坐标、年份与档案编号。</div>
-  <div class="tiny">半格电 · 另一条人生 V2.0</div>
-</div>`;show("res")}
-function wrap(ctx,t,x,y,max,lineH,maxLines=99){let arr=[],line="";for(let ch of t){let test=line+ch;if(ctx.measureText(test).width>max&&line){arr.push(line);line=ch}else line=test}if(line)arr.push(line);arr.slice(0,maxLines).forEach((a,i)=>ctx.fillText(a,x,y+i*lineH));return y+Math.min(arr.length,maxLines)*lineH}
 
-let cardDataUrl="";
+function renderDecision(){
+  const c=CHOICES[cur.id];
+  decisionOut.innerHTML=`
+  <div class="identityCard">
+    <img class="portrait" src="${cur.img}">
+    <div class="identityBody">
+      <div class="eyebrow">IDENTITY FOUND // ${code}</div>
+      <div class="muted">你在这条世界线的身份是</div>
+      <div class="job">${displayJob}</div>
+      <div class="meta">${year} 年出生 · ${place} · 档案年龄 ${age} 岁</div>
+      <div class="worldIntro">${cur.world}<br><br><span class="accent">你的工作：</span>${cur.work}</div>
+      <div class="alert">
+        <div class="label">ANOMALY DETECTED // 异常事件</div>
+        <div class="event">${c.prompt}</div>
+      </div>
+      <div class="choiceTitle">如果是你，你会怎么做？</div>
+      <button class="btn choice" data-n="0" onclick="resolveChoice(0)">${c.options[0].label}<small>选择后将锁定这条人生</small></button>
+      <button class="btn choice" data-n="1" onclick="resolveChoice(1)">${c.options[1].label}<small>选择后将锁定这条人生</small></button>
+    </div>
+  </div>`;
+  show("decision");
+}
 
-function drawWrappedText(ctx, text, x, y, maxWidth, lineHeight, maxLines){
-  const chars=[...text];
-  const lines=[];
-  let line="";
+function resolveChoice(i){
+  branch=CHOICES[cur.id].options[i];
+  bar.style.width="0%";loadPct.textContent="00%";
+  loadStatus.textContent="正在写入你的选择……";
+  traceB.textContent="DECISION // LOCKING";
+  show("load");
+  setTimeout(()=>{bar.style.width="55%";loadPct.textContent="55%";loadStatus.textContent="世界线正在重新计算……"},180);
+  setTimeout(()=>{bar.style.width="100%";loadPct.textContent="100%";traceB.textContent="DECISION // RECORDED"},620);
+  setTimeout(renderResult,820);
+}
+
+function renderResult(){
+  const danger=clamp(starsToN(cur.danger)+branch.danger);
+  const freedom=clamp(starsToN(cur.freedom)+branch.freedom);
+  out.innerHTML=`
+  <div class="resultHero">
+    <div class="eyebrow">DECISION RECORDED // ${code}</div>
+    <div class="muted">这条人生已经无法撤回</div>
+    <div class="resultJob">${displayJob}</div>
+    <div class="meta">${year} 年出生 · ${place}</div>
+    <img class="portrait" style="margin-top:14px;border-radius:15px;border:1px solid var(--line)" src="${cur.img}">
+  </div>
+  <div class="stats">
+    <div class="stat">人生稀有度<b>${cur.rare}</b></div>
+    <div class="stat">身份可信度<b>${cur.trust}</b></div>
+    <div class="stat">危险程度<b>${danger}/5</b></div>
+    <div class="stat">自由程度<b>${freedom}/5</b></div>
+  </div>
+  <div class="sec"><h3>01 // 你的世界</h3>${cur.world}</div>
+  <div class="sec"><h3>02 // 你的身份</h3>${cur.work}</div>
+  <div class="sec"><h3>03 // 异常事件</h3><div class="twist">${CHOICES[cur.id].prompt}</div></div>
+  <div class="sec"><h3>04 // 你的决定</h3>
+    <div class="choiceResult">
+      <div class="picked">你选择了：${branch.short}</div>
+      <div class="aftermath">${branch.outcome}</div>
+    </div>
+  </div>
+  <div class="sec"><h3>05 // 未公开记录</h3>${cur.secret}</div>
+  <div class="sec"><h3>遗留物</h3><div class="twist">${cur.legacy}</div></div>
+  <div class="actions">
+    <button class="btn primary" onclick="makeCard()">▣ 生成最终居民档案卡</button>
+    <button class="btn" onclick="startLife()">↻ 再活一次</button>
+    <div class="ctaNote">同一个身份，也可能因为不同选择进入另一种结局。</div>
+    <div class="tiny">半格电 · 另一条人生 V2.1 互动实验版</div>
+  </div>`;
+  show("res");
+}
+
+function drawWrappedText(ctx,text,x,y,maxWidth,lineHeight,maxLines){
+  const chars=[...text],lines=[];let line="";
   for(const ch of chars){
     const test=line+ch;
-    if(ctx.measureText(test).width>maxWidth && line){
-      lines.push(line);
-      line=ch;
-      if(lines.length>=maxLines) break;
-    }else{
-      line=test;
-    }
+    if(ctx.measureText(test).width>maxWidth&&line){
+      lines.push(line);line=ch;if(lines.length>=maxLines)break;
+    }else line=test;
   }
-  if(lines.length<maxLines && line) lines.push(line);
-  if(lines.length===maxLines && chars.join("").length>lines.join("").length){
+  if(lines.length<maxLines&&line)lines.push(line);
+  if(lines.length===maxLines&&chars.join("").length>lines.join("").length){
     let last=lines[maxLines-1];
-    while(ctx.measureText(last+"…").width>maxWidth && last.length>0) last=last.slice(0,-1);
+    while(ctx.measureText(last+"…").width>maxWidth&&last.length>0)last=last.slice(0,-1);
     lines[maxLines-1]=last+"…";
   }
   lines.forEach((ln,i)=>ctx.fillText(ln,x,y+i*lineHeight));
-  return y + lines.length*lineHeight;
 }
-
 function drawCover(ctx,img,x,y,w,h){
   const r=Math.max(w/img.naturalWidth,h/img.naturalHeight);
-  const sw=w/r, sh=h/r;
-  const sx=(img.naturalWidth-sw)/2;
-  const sy=Math.max(0,(img.naturalHeight-sh)*0.28);
+  const sw=w/r,sh=h/r,sx=(img.naturalWidth-sw)/2,sy=Math.max(0,(img.naturalHeight-sh)*.28);
   ctx.drawImage(img,sx,sy,sw,sh,x,y,w,h);
 }
 
 async function makeCard(){
   try{
-    if(!cur){alert("请先生成人生档案。");return}
-    const displayJob = document.querySelector('.job')?.textContent?.trim() || cur.job;
-    const dangerN=(cur.danger.match(/★/g)||[]).length;
-    const freedomN=(cur.freedom.match(/★/g)||[]).length;
-
-    const W=1080,H=1440;
-    const c=document.createElement("canvas");
-    c.width=W;c.height=H;
+    if(!cur||!branch){alert("请先完成一次人生选择。");return}
+    const danger=clamp(starsToN(cur.danger)+branch.danger);
+    const freedom=clamp(starsToN(cur.freedom)+branch.freedom);
+    const W=1080,H=1440,c=document.createElement("canvas");c.width=W;c.height=H;
     const ctx=c.getContext("2d");
+    ctx.fillStyle="#080b0e";ctx.fillRect(0,0,W,H);
+    ctx.strokeStyle="#35414c";ctx.lineWidth=4;ctx.strokeRect(2,2,W-4,H-4);
 
-    ctx.fillStyle="#080b0e";
-    ctx.fillRect(0,0,W,H);
-
-    ctx.strokeStyle="#35414c";
-    ctx.lineWidth=4;
-    ctx.strokeRect(2,2,W-4,H-4);
-
-    ctx.font='32px ui-monospace, monospace';
-    ctx.fillStyle="#8fe3c2";
+    ctx.font='32px ui-monospace, monospace';ctx.fillStyle="#8fe3c2";
     ctx.fillText("PARALLEL LIFE ARCHIVE",54,70);
-    ctx.textAlign="right";
-    ctx.fillText(code,1025,70);
-    ctx.textAlign="left";
+    ctx.textAlign="right";ctx.fillText(code,1025,70);ctx.textAlign="left";
 
-    const img=new Image();
-    img.crossOrigin="anonymous";
-    img.src=cur.img;
-    await new Promise((resolve,reject)=>{
-      img.onload=resolve;
-      img.onerror=reject;
-    });
-    drawCover(ctx,img,0,105,W,500);
+    const img=new Image();img.src=cur.img;
+    await new Promise((res,rej)=>{img.onload=res;img.onerror=rej});
+    drawCover(ctx,img,0,105,W,450);
 
-    ctx.fillStyle="#080b0e";
-    ctx.fillRect(0,605,W,H-605);
+    ctx.fillStyle="#080b0e";ctx.fillRect(0,555,W,H-555);
+    ctx.fillStyle="#8fe3c2";ctx.font='27px ui-monospace, monospace';
+    ctx.fillText("CITIZEN RECORD // 最终世界线",54,615);
 
-    ctx.fillStyle="#8fe3c2";
-    ctx.font='28px ui-monospace, monospace';
-    ctx.fillText("CITIZEN RECORD // 另一条人生",54,665);
+    ctx.fillStyle="#f3f6f7";ctx.font='700 56px "Microsoft YaHei","Noto Sans SC",sans-serif';
+    drawWrappedText(ctx,displayJob,54,690,970,64,1);
 
-    ctx.fillStyle="#f3f6f7";
-    ctx.font='700 60px "Microsoft YaHei","Noto Sans SC",sans-serif';
-    drawWrappedText(ctx,displayJob,54,745,970,70,1);
+    ctx.fillStyle="#9aa5ad";ctx.font='31px "Microsoft YaHei","Noto Sans SC",sans-serif';
+    ctx.fillText(`${year} 年出生 · ${place}`,54,750);
 
-    ctx.fillStyle="#9aa5ad";
-    ctx.font='34px "Microsoft YaHei","Noto Sans SC",sans-serif';
-    ctx.fillText(`${year} 年出生 · ${place}`,54,810);
-
-    const boxes=[
-      ["稀有度",cur.rare],
-      ["可信度",cur.trust],
-      ["危险程度",`${dangerN}/5`],
-      ["自由程度",`${freedomN}/5`]
-    ];
-    const bx=[54,553], by=[855,1015], bw=473,bh=130;
+    const boxes=[["稀有度",cur.rare],["可信度",cur.trust],["危险程度",`${danger}/5`],["自由程度",`${freedom}/5`]];
+    const bx=[54,553],by=[790,945],bw=473,bh=125;
     boxes.forEach((it,i)=>{
       const col=i%2,row=Math.floor(i/2),x=bx[col],y=by[row];
-      ctx.strokeStyle="#35414c"; ctx.lineWidth=3;
-      ctx.beginPath(); ctx.roundRect(x,y,bw,bh,22); ctx.stroke();
-      ctx.fillStyle="#9aa5ad";
-      ctx.font='26px "Microsoft YaHei","Noto Sans SC",sans-serif';
-      ctx.fillText(it[0],x+28,y+42);
-      ctx.fillStyle="#f3f6f7";
-      ctx.font='700 42px ui-monospace, monospace';
-      ctx.fillText(it[1],x+28,y+96);
+      ctx.strokeStyle="#35414c";ctx.lineWidth=3;ctx.beginPath();ctx.roundRect(x,y,bw,bh,22);ctx.stroke();
+      ctx.fillStyle="#9aa5ad";ctx.font='25px "Microsoft YaHei","Noto Sans SC",sans-serif';ctx.fillText(it[0],x+28,y+40);
+      ctx.fillStyle="#f3f6f7";ctx.font='700 40px ui-monospace, monospace';ctx.fillText(it[1],x+28,y+92);
     });
 
-    ctx.fillStyle="#8fe3c2";
-    ctx.font='26px ui-monospace, monospace';
-    ctx.fillText("TURNING POINT // 人生转折点",54,1195);
+    ctx.fillStyle="#8fe3c2";ctx.font='25px ui-monospace, monospace';
+    ctx.fillText("FINAL CHOICE // 你的决定",54,1115);
+    ctx.fillStyle="#f3f6f7";ctx.font='700 34px "Microsoft YaHei","Noto Sans SC",sans-serif';
+    ctx.fillText(branch.short,54,1165);
 
-    ctx.fillStyle="#8fe3c2";
-    ctx.fillRect(54,1225,5,120);
+    ctx.fillStyle="#8fe3c2";ctx.fillRect(54,1195,5,130);
+    ctx.fillStyle="#eef2f3";ctx.font='29px "Microsoft YaHei","Noto Sans SC",sans-serif';
+    drawWrappedText(ctx,branch.outcome,82,1235,900,42,3);
 
-    ctx.fillStyle="#f0f3f4";
-    ctx.font='31px "Microsoft YaHei","Noto Sans SC",sans-serif';
-    drawWrappedText(ctx,cur.event,82,1265,900,45,3);
-
-    ctx.strokeStyle="#29333d";
-    ctx.lineWidth=2;
-    ctx.beginPath(); ctx.moveTo(54,1370); ctx.lineTo(1026,1370); ctx.stroke();
-
-    ctx.fillStyle="#6d7983";
-    ctx.font='22px ui-monospace, monospace';
+    ctx.strokeStyle="#29333d";ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(54,1365);ctx.lineTo(1026,1365);ctx.stroke();
+    ctx.fillStyle="#6d7983";ctx.font='22px ui-monospace, monospace';
     ctx.fillText("半格电 // HALF BATTERY",54,1410);
-    ctx.textAlign="right";
-    ctx.fillText("ANOTHER LIFE. STILL YOU.",1026,1410);
-    ctx.textAlign="left";
+    ctx.textAlign="right";ctx.fillText("YOU CHOSE THIS LIFE.",1026,1410);ctx.textAlign="left";
 
-    cardDataUrl=c.toDataURL("image/png");
-    sharePreview.src=cardDataUrl;
-    modal.classList.add("on");
-    modal.scrollTop=0;
-  }catch(e){
-    alert("档案卡生成失败："+(e&&e.message?e.message:"未知错误"));
-  }
+    cardDataUrl=c.toDataURL("image/png");sharePreview.src=cardDataUrl;
+    modal.classList.add("on");modal.scrollTop=0;
+  }catch(e){alert("档案卡生成失败："+(e&&e.message?e.message:"未知错误"))}
 }
 
 function saveCard(){
   try{
     if(!cardDataUrl){alert("请先生成居民档案卡。");return}
-    const title=(document.querySelector('.job')?.textContent || cur.job).replace(/[\\/:*?"<>|]/g,'');
+    const title=displayJob.replace(/[\\/:*?"<>|]/g,'');
     const a=document.createElement("a");
-    a.download=`半格电_${title}_${code}.png`;
-    a.href=cardDataUrl;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-  }catch(e){
-    alert("保存图片失败，请长按图片或截图保存。");
-  }
+    a.download=`半格电_${title}_${code}.png`;a.href=cardDataUrl;
+    document.body.appendChild(a);a.click();a.remove();
+  }catch(e){alert("保存图片失败，请长按图片或截图保存。")}
 }
-</script></body></html>
+</script>
+</body></html>
