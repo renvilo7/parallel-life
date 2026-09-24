@@ -1,18 +1,18 @@
 <!doctype html><html lang="zh-CN"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#070a0e"><title>另一条人生｜半格电 V2.3</title>
+<meta name="theme-color" content="#070a0e"><title>另一条人生｜半格电 V2.4</title>
 <link rel="stylesheet" href="./style.css"></head><body><div class="scan"></div><div class="wrap">
-<div class="top"><span class="brand">半格电 // HALF BATTERY</span><span>PARALLEL ARCHIVE V2.3</span></div>
+<div class="top"><span class="brand">半格电 // HALF BATTERY</span><span>PARALLEL ARCHIVE V2.4</span></div>
 <section id="s0" class="screen active">
-<div class="heroCode">18 CAREERS // 144 WORLDLINES</div><div class="muted">CONTENT EXPANSION</div>
-<h1>这一次，<br>你可能活成 18 种人。</h1>
-<p class="lead">每个职业都有两种异常开局。连续做 3 次选择，留下不同的世界线路径、异常编号、遗留物和后日谈。</p>
+<div class="heroCode">18 CAREERS // VARIABLE ANOMALIES</div><div class="muted">ANOMALY ARCHIVE</div>
+<h1>这一次，<br>档案不一定会正常结束。</h1>
+<p class="lead">先做 3 次选择。途中可能什么都没有，也可能发现异常记录、遗留物或与你有关的旧痕迹。少数世界线会额外打开隐藏第 4 轮。</p>
 <button class="btn primary" data-action="start-life">调取我的职业档案</button>
-<div class="heroNote"><span data-discovery>已发现职业 0/18 · 世界线路径 0/144</span><br>无需登录 · 本地保存发现度 · 大约 30 秒</div>
+<div class="heroNote"><span data-discovery>已发现职业 0/18 · 世界线路径 0/144</span><br>异常不会每轮出现 · 隐藏第4轮也不是每次都有</div>
 </section>
 <section id="load" class="screen"><div class="box"><div class="heroCode">ARCHIVE RECOVERY // <span id="loadPct">00%</span></div><div class="barbg"><div id="bar" class="bar"></div></div><div id="loadStatus" class="loadStatus">正在搜索异常世界线……</div><div class="loadTrace"><span>WORLDLINE // UNKNOWN</span><span id="traceB">IDENTITY // SEARCHING</span></div></div></section>
 <section id="decision" class="screen identity"><div id="decisionOut"></div></section>
-<section id="res" class="screen result"><div id="out"></div></section>
+<section id="discovery" class="screen discoveryScreen"><div id="discoveryOut"></div></section><section id="hidden" class="screen hiddenScreen"><div id="hiddenOut"></div></section><section id="res" class="screen result"><div id="out"></div></section>
 </div>
 <div id="modal" class="modal"><div class="modalin"><div class="modalTop"><button class="btn closeMini" data-action="close-modal">关闭</button></div>
 <p class="helper">这条世界线已经归档。保存你的最终居民档案。</p><img id="sharePreview" class="cardpreview" alt="居民档案卡">

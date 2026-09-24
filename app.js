@@ -3,7 +3,7 @@ const LIVES=[{"id":"mirror","job":"镜像替身演员","altjob":"镜面异常代
 const STORIES={"mirror":{"rounds":[{"prompt":"镜中的你在玻璃上写下了你的出生年份。城市档案却显示，那一年根本没有你的出生记录。","A":{"label":"在玻璃上写下自己的名字","after":"你刚写完，镜中的你就把名字擦掉，重新写下四个字：终于回来了。"},"B":{"label":"立刻离开镜室并封锁现场","after":"你离开了。监控显示镜中的“你”却一直站在原地，直到天亮。"}},{"promptA":"第二天，你家里所有镜子同时起雾，只留下一个门形轮廓。门后似乎有人在敲。","promptB":"第二天，你收到一份匿名快递：里面是一面小镜子，背面刻着“你逃错方向了”。","A":{"label":"触碰镜面，看看门后是什么","after":"镜面像水一样凹陷，你听见自己的声音从另一侧说：快一点。"},"B":{"label":"把所有镜面全部遮住","after":"房间彻底没有反光后，墙上却出现了一个清晰的人影轮廓。"}},{"promptA":"镜中世界开始与现实重叠。另一个你问：我们之间，谁应该留在外面？","promptB":"你以为切断了联系，但夜里所有黑色屏幕同时亮起，另一个你出现在里面。","A":{"label":"跨过去，亲自确认哪边才是真的","after":"你迈过了界线。身后的门没有消失，但两边都开始叫你“原件”。"},"B":{"label":"拒绝交换，守住现在这个世界","after":"你没有过去。第二天起，所有镜子都恢复正常——只是镜中的你永远慢半秒。"}}],"endings":{"3":{"title":"原件交换","text":"你最终进入了镜中世界。现实里的“你”照常生活，没有任何人发现交换发生过。唯一证据，是你现在看到的所有文字都左右颠倒。"},"1":{"title":"双重身份","text":"你没有彻底跨过去，也没能真正切断联系。从此两个世界会偶尔互相覆盖，而你成了唯一能同时记得两边的人。"},"-1":{"title":"延迟镜像","text":"你守住了现实，却再也无法确认镜子里慢半秒的那个你是不是在模仿。档案局把你列为长期观察对象。"},"-3":{"title":"无镜生活","text":"你彻底封存了所有镜面异常。多年后，城市宣布事件结束。只有你知道：任何黑屏熄灭的瞬间，里面仍有人看着你。"}}},"memory":{"rounds":[{"prompt":"一名客户删除了整整 32 年记忆。操作结束前，你发现那 32 年里的每一年都有你。","A":{"label":"偷偷恢复其中最短的一段","after":"你恢复了 47 秒。画面里，对方站在你的葬礼上，日期是 19 年后。"},"B":{"label":"按规定继续执行删除","after":"删除完成。可系统提示：有 47 秒无法清除，原因是“记忆所有权不属于客户”。"}},{"promptA":"那 47 秒里，一个陌生人把一张写有你名字的存储芯片交给客户。","promptB":"不可删除的 47 秒自动转移到你的私人账户，而你从未申请过这个账户。","A":{"label":"打开那张存储芯片","after":"芯片里只有一句话：如果你看到这里，说明第一次已经失败。"},"B":{"label":"把芯片交给监管部门","after":"监管系统拒绝接收，并显示：该证物已于 19 年后完成归档。"}},{"promptA":"系统给你最后一次选择：恢复完整 32 年，代价是覆盖你自己的同等记忆。","promptB":"你被要求永久销毁这份异常记忆，但删除按钮旁多出一个从未见过的“转移给自己”。","A":{"label":"承担代价，读取全部真相","after":"32 年记忆灌入你的大脑。你终于记起：你和这个人已经认识了很多次。"},"B":{"label":"拒绝读取，让这段记忆消失","after":"记录被清空。你回家后，却发现桌上摆着一张你和客户共同生活多年的合照。"}}],"endings":{"3":{"title":"记忆继承者","text":"你读取了全部记录，也失去了一部分原本的人生。你无法再区分哪些经历属于自己，但你终于知道为什么每一次都会重新找到这份记忆。"},"1":{"title":"残留记忆","text":"你只接触了部分真相。之后的人生里，你会在陌生地点产生强烈熟悉感，仿佛另一段被删除的人生仍在底层运行。"},"-1":{"title":"合法遗忘","text":"你尽力按规则处理异常，却无法阻止碎片进入自己的生活。官方认定事件结束，你则开始记录每天醒来后第一秒想起的人。"},"-3":{"title":"完全删除","text":"你成功销毁了所有异常数据。十九年后，一位陌生人参加了你的葬礼，并把一张新的存储芯片交给下一位记忆销毁员。"}}},"key":{"rounds":[{"prompt":"你清点出了第 144 把钥匙。钥匙柄上刻着你家的地址，而官方档案里只有 143 扇禁门。","A":{"label":"回家，用它打开那扇不存在的门","after":"衣柜后的墙裂开一道门缝，门后是一条与你家完全相同的走廊。"},"B":{"label":"封存钥匙并向上级报告","after":"系统回复：第 144 把钥匙从未存在。与此同时，你的住址从公开地图上消失。"}},{"promptA":"走廊尽头站着另一个你。他手里拿着第 145 把钥匙，并说：“你终于打开了。”","promptB":"当天夜里，你收到调令：前往处理“第 144 扇禁门”。地址正是你已经消失的家。","A":{"label":"接过第 145 把钥匙","after":"钥匙入手后，所有门牌号同时向后移动了一位。你的家变成了 145 号禁门。"},"B":{"label":"拒绝接触，退回安全区","after":"你后退一步，身后的出口却已经变成一堵完整的墙。"}},{"promptA":"另一个你说：两条世界线只能保留一个钥匙保管员。现在轮到你决定谁留下。","promptB":"系统广播响起：禁门数量异常，请保管员选择“关闭源头”或“删除自身权限”。","A":{"label":"留下自己，关闭另一条世界线","after":"你转动了钥匙。所有异常门同时消失，只剩手里这一把还在发热。"},"B":{"label":"放弃身份，把钥匙交给另一个你","after":"你交出了钥匙。下一秒，所有系统都不再承认你曾经是保管员。"}}],"endings":{"3":{"title":"第 145 位保管员","text":"你关闭了另一条世界线，却保留了最后一把钥匙。从此官方档案永远写着 144 扇禁门，而你知道第 145 扇门随时可能再次出现。"},"1":{"title":"双门世界","text":"你试图控制异常，却没能彻底关闭它。现实中开始偶尔出现两份相同地址，而你成为唯一能判断哪一扇门属于哪条世界线的人。"},"-1":{"title":"权限剥离","text":"你放弃了一部分控制权。城市恢复正常，但每当有人遗失钥匙，系统都会自动把报失记录发送到你的私人终端。"},"-3":{"title":"不存在的居民","text":"你彻底退出了禁门系统。第二天，所有人都记得你，却没有任何档案证明你住在这座城市。你成了第 144 扇门唯一的居民。"}}},"signal":{"rounds":[{"prompt":"失联信号开始连续播报未来灾难日期，最后一个日期是明天。职业守则第一条：不要回复。","A":{"label":"违反守则，回复“你是谁？”","after":"对方立即回应：终于轮到你了。随后传来一段用你声音录制的警告。"},"B":{"label":"保持沉默，只记录信号","after":"你没有回复。录音结束前却多出一句：沉默也算一种回答。"}},{"promptA":"未来录音告诉你：明天 03:12 必须切断整个通讯阵列，否则会有 81 个殖民点失联。","promptB":"第二轮信号给出同样指令：03:12 切断阵列，并注明“不要让现在的你知道原因”。","A":{"label":"按指令准备切断阵列","after":"你输入停机命令后，系统弹出警告：发送这条指令的人正是你的终端。"},"B":{"label":"拒绝执行，向所有殖民点公开警报","after":"警报刚发出，81 个殖民点同时回复：我们已经收到过一次，来自 23 年后的你。"}},{"promptA":"03:11:59，阵列收到最后一句：如果你切断它，你会成为信号的起点。","promptB":"03:11:59，所有频道归零，只剩一个按钮：发送第一条信号。","A":{"label":"接受循环，成为那个发送者","after":"你按下按钮，听见自己的声音穿过频道，开始播报第一个未来日期。"},"B":{"label":"拒绝发送，让时间线自行发展","after":"你什么都没做。03:12 准时过去，没有灾难，也没有任何人再记得这些信号。"}}],"endings":{"3":{"title":"信号起点","text":"你主动完成了时间闭环。从此每一场没有发生的灾难背后，都可能有一段由你发出的警告。"},"1":{"title":"半闭合循环","text":"你参与了循环，却没有完全服从它。未来因此出现大量无法解释的空白日期，而你成为唯一保留完整记录的人。"},"-1":{"title":"未发生事件","text":"你没有成为信号的起点，但那些警告也没有真正消失。它们转而出现在其他人的设备里，只是不再署你的名字。"},"-3":{"title":"静默宇宙","text":"你拒绝了所有干预。此后 36 个居住点再也没收到异常信号。档案里唯一的残留，是一段没有发送记录的你的声音。"}}},"dream":{"rounds":[{"prompt":"你在 14 个互不认识的人的梦里，看见了同一间属于你童年的卧室。","A":{"label":"沿着梦里的门继续往里走","after":"门后不是梦，而是一条陌生街道。路牌却写着你小时候的住址。"},"B":{"label":"立即退出并标记为污染梦境","after":"连接被切断。可 14 个受试者同时在现实里说出了你的童年昵称。"}},{"promptA":"街道尽头有一栋房子，门口坐着一个从未见过的老人，他叫出了你的全名。","promptB":"官方要求你永久封存案件，但系统里突然多出第 15 个梦境记录，来源显示是你自己。","A":{"label":"进入那栋房子 / 打开第15份梦境","after":"你看见一段不属于自己的童年：同一间卧室里，床上睡着另一个孩子。"},"B":{"label":"停止调查，删除访问权限","after":"权限被删除后，你每晚仍会回到那间房，只是这次你站在门外。"}},{"promptA":"那个孩子醒来后问你：你想拿回哪一段人生？你只能选一次。","promptB":"门内传来声音：只要你承认这是自己的梦，门就会永远打开。","A":{"label":"承认并取回那段人生","after":"大量陌生记忆涌入，你第一次知道自己原来曾经在这里长大。"},"B":{"label":"拒绝，把门永远留在梦里","after":"门缓慢关闭。最后一秒，你看见房间墙上挂着一张现在的你的照片。"}}],"endings":{"3":{"title":"双重童年","text":"你取回了另一段人生。此后你拥有两套完整童年记忆，却无法证明哪一套先发生。"},"1":{"title":"梦境迁移","text":"你只带回了一部分东西。现实没有改变，但一些原本不存在的人开始认得你。"},"-1":{"title":"门外的人","text":"你没有真正进入那段人生，却成为它永远的旁观者。每次睡着，你都会回到同一扇门前。"},"-3":{"title":"封存梦境","text":"你成功关闭了所有记录。多年后，那 14 个人都忘记了这场梦，只有你再也梦不到自己的童年。"}}},"weather":{"rounds":[{"prompt":"系统要求你修复一场持续 17 年、只落在一栋废弃房屋上的雨。屋内的雨却在向天空落去。","A":{"label":"进入房屋寻找雨的源头","after":"地下室里没有设备，只有一张不断渗水的旧照片。照片里站着年轻 17 岁的你。"},"B":{"label":"直接关闭这片区域的天气系统","after":"雨停了。全球气象数据库同时丢失了整整 17 年记录。"}},{"promptA":"照片背面写着：只要把它带出房屋，17 年会重新开始。","promptB":"系统要求你恢复被删除的 17 年天气，但恢复源坐标正是那栋废屋地下室。","A":{"label":"带走照片 / 恢复数据","after":"所有城市的天空同时闪烁了一次，你看见 17 年前的云层短暂覆盖现在。"},"B":{"label":"把照片留在原处 / 拒绝恢复","after":"那栋房子重新开始下雨，但这一次雨只落在屋内。"}},{"promptA":"中央系统要求你选择：恢复那 17 年，或保留现在这条时间线。","promptB":"废屋开始快速老化，像要一次性补完被夺走的 17 年。","A":{"label":"让被删除的17年重新回来","after":"世界没有倒退，但每个人都多出了一段从未经历过的天气记忆。"},"B":{"label":"保留现在，让那17年彻底消失","after":"你确认删除。第二天，全世界只有你还记得那些年份曾经存在。"}}],"endings":{"3":{"title":"失落气候恢复","text":"你让 17 年重新进入世界。没有人知道那些记忆从哪里来，但从此每个人都能描述一场自己从未经历过的雨。"},"1":{"title":"双重天气史","text":"两套气候记录同时存在。城市每天都会短暂切换一次天气版本，而你负责决定哪一个被称为“今天”。"},"-1":{"title":"局部遗忘","text":"你保住了现在，却无法完全删除异常。那栋房子附近的人偶尔会想起一场从未下过的雨。"},"-3":{"title":"无记录年份","text":"17 年被彻底从数据库和公共记忆中抹去。只有你保留着最后一瓶逆向雨水，证明那些年份并非空白。"}}},"time":{"rounds":[{"prompt":"你收到一块制造于 18 年后的手表。背面刻着你的名字，内部还有你和陌生人的合照。","A":{"label":"戴上它，让它继续走","after":"秒针开始倒转。你的手机突然出现 18 年后的 23 条未读消息。"},"B":{"label":"把它封进时间遗物库","after":"库门刚关闭，手表却出现在你办公桌上，比刚才快了 18 分钟。"}},{"promptA":"最后一条未来消息写着：不要去退休那天的办公室。","promptB":"鉴定系统显示：这块表的正式入库日期就是你退休那一天。","A":{"label":"追查未来照片里的陌生人","after":"你查到对方尚未出生，但出生登记已经提前存在，监护人一栏写着你的名字。"},"B":{"label":"停止调查，等时间自己解释","after":"此后每一年，手表都会提前一天寄来一张未来照片。"}},{"promptA":"退休当天，照片里的那个人真的敲响办公室的门，说：你只能改变一次。","promptB":"退休当天，库房自动解封。手表停在你第一次收到它的那一分钟。","A":{"label":"改变那一天，接受未来被重写","after":"你拨动表冠。所有照片同时变成空白，只有你还记得原来的版本。"},"B":{"label":"什么都不改，让时间闭合","after":"你把手表交给对方。对方转身离开前说：18 年后记得寄给过去的你。"}}],"endings":{"3":{"title":"改写者","text":"你主动改写了未来。世界没有崩塌，只是从此所有关于你的预测都会比真实结果偏差 18 年。"},"1":{"title":"可变未来","text":"你改变了一部分，却保留了时间闭环。未来因此出现多个合法版本，而你是唯一知道它们都曾真实存在的人。"},"-1":{"title":"守时者","text":"你尽量不干预。最终一切仍按照片发生，只是每张照片里你的表情都比原来更像是在等待。"},"-3":{"title":"完整闭环","text":"你拒绝改变任何事。18 年后，你亲手把同一块表寄回过去，并终于明白为什么它一直快 18 年。"}}},"ruin":{"rounds":[{"prompt":"无人城市里，每天凌晨 02:17 都有人按下同一个人行横道按钮。监控里却从来没有人。","A":{"label":"02:17 亲自站在路口等","after":"按钮准时被按下。空无一人的斑马线上出现第二个人的脚印。"},"B":{"label":"关闭整个街区的电力","after":"城市全部熄灯，只有那个按钮仍自己亮着，广播说：登记居民 2 人。"}},{"promptA":"脚印一路延伸到你的影子里，然后停止。你的影子却开始向另一个方向走。","promptB":"系统新增了一名居民，但姓名栏为空，住址显示为你的宿舍。","A":{"label":"跟着影子 / 新居民的定位走","after":"路线把你带到一栋从地图上删掉的公寓，房间里有人刚刚做完一顿热饭。"},"B":{"label":"立刻封锁城市并申请撤离","after":"撤离申请被拒绝：当前城市人口 2，至少一名管理员必须留下。"}},{"promptA":"房间里的录音机播放你的声音：别再把城市留给我一个人。","promptB":"最后一班撤离列车到站，车门打开，里面坐着和你一模一样的人。","A":{"label":"留下，和“第二位居民”见面","after":"你走进车厢 / 房间。城市人口统计从 2 变成 1，但你已经分不清少的是谁。"},"B":{"label":"离开城市，不再承担管理员身份","after":"你登上列车离开。第二天系统仍显示城市人口 1，姓名依然是你。"}}],"endings":{"3":{"title":"第二位居民","text":"你主动留下并接受了另一个存在。此后城市恢复了部分生活痕迹，但所有监控永远只能拍到一个人。"},"1":{"title":"双重管理员","text":"你与另一个自己轮流维护城市。系统始终只记录一个账号，却每天出现两套不同的巡检日志。"},"-1":{"title":"撤离失败","text":"你试图退出，却无法从人口统计中删除自己。无论搬到哪里，02:17 的按钮都会在附近出现。"},"-3":{"title":"唯一居民","text":"你彻底离开了废城。多年后那座城市重新开放，第一份人口表上仍只有一个名字：你的。"}}},"moon":{"rounds":[{"prompt":"你发现第 20 个未登记光源正在精确模仿整套人工月相系统，但没有任何国家承认发射过它。","A":{"label":"改变轨道，靠近第20个光源","after":"距离缩短后，它停止模仿。那不是卫星，而是一面巨大的镜子。"},"B":{"label":"假装没发现，继续正常校准","after":"三天后，第 20 个光源开始比官方系统提前一小时改变月相。"}},{"promptA":"镜面里没有你的飞行器，只映着一轮真正的月亮。","promptB":"越来越多城市开始跟随第 20 个光源，而不是官方月相，居民却毫无察觉。","A":{"label":"关闭19颗人工月亮做一次对照","after":"全世界夜空熄灭 11 秒。第 12 秒，真正的月亮出现在所有人头顶。"},"B":{"label":"维持系统稳定，不让公众发现异常","after":"你成功隐藏异常，但每天都有更多人声称记得“以前真正的月亮”。"}},{"promptA":"真正的月亮只会出现一次。系统要求你决定是否永久关闭人工月光。","promptB":"第20个光源向你的终端发送一句：你们已经忘了为什么需要假的。","A":{"label":"关闭人工系统，让真正的月亮回来","after":"19颗卫星依次熄灭。夜空变得更暗，但所有海洋潮汐同时恢复到旧记录。"},"B":{"label":"保留人工月亮，维持现在的世界","after":"你保留了系统。第20个光源缓慢离开轨道，像是在放弃等待。"}}],"endings":{"3":{"title":"真月回归","text":"你关闭了人工系统，真正的月亮重新成为夜空的一部分。没人能解释它过去去了哪里，也没人再提第 20 个光源。"},"1":{"title":"双月时代","text":"你让真月和人工系统同时存在。此后不同城市会选择不同的夜空，月亮第一次变成了公共选择。"},"-1":{"title":"被隐藏的月亮","text":"你维持了人工月光，但越来越多人开始梦见真正的月亮。系统把这种梦列为新的群体性记忆异常。"},"-3":{"title":"完美人工夜","text":"你彻底封存第20个光源的记录。人工月亮继续完美运行，直到某一天所有孩子都问同一个问题：月亮为什么看起来像机器？"}}},"archive":{"rounds":[{"prompt":"同一场事故存在两份都完整可信的历史：一份死了312人，一份无人死亡。两边的幸存者都还活着。","A":{"label":"保留两个版本，拒绝删除","after":"系统立即把你标记成“历史矛盾”，你的个人履历也出现两个版本。"},"B":{"label":"按规定强制选择一个版本","after":"你删除了一份历史。当天晚上，被删除版本里的死者开始给档案局打电话。"}},{"promptA":"两个版本的你同时出现在数据库里，一个选择了事故死亡版，一个选择了无人死亡版。","promptB":"电话里的312个人都能准确说出被删除档案的编号，并要求恢复“他们的现实”。","A":{"label":"让两个版本继续共存","after":"档案系统开始产生越来越多成对的历史，像是在学习你的决定。"},"B":{"label":"寻找一个所谓的“原始版本”","after":"你追到最早备份，却发现事故发生前就已经存在两份记录。"}},{"promptA":"系统给出最后警告：必须删除一个版本，否则历史数据库将失去唯一性。","promptB":"所谓原始记录最后一页写着：真正的错误，是你相信历史只能有一个版本。","A":{"label":"接受多重历史，不再强求唯一真相","after":"你取消了唯一性规则。世界没有崩溃，人们只是开始拥有不同但都有效的过去。"},"B":{"label":"仍然选一个版本作为正式历史","after":"你做出了最终选择。第二天，整个世界都记得同一个版本——除了你。"}}],"endings":{"3":{"title":"多重历史时代","text":"你允许多个过去同时存在。档案学从此不再回答“发生了什么”，而是记录“哪些版本仍然有效”。"},"1":{"title":"双版本现实","text":"你保留了部分矛盾。社会继续运行，只是每个人的证件上开始多出一栏：历史版本号。"},"-1":{"title":"唯一真相维护员","text":"你恢复了单一历史，但必须终身维护那些被删除版本留下的漏洞。越来越多陌生人会问你：你还记得另一边吗？"},"-3":{"title":"最后的异议者","text":"世界重新拥有唯一历史。只有你的记忆不肯同步，于是你成了整个文明最后一个知道另一种过去曾存在的人。"}}},"relic":{"rounds":[{"prompt":"一份封存63年的记忆指定你本人为收件人，可寄存日期早于你出生。","A":{"label":"现在就打开这段记忆","after":"画面里，一个陌生人在海边等你，只说：这次不要迟到。"},"B":{"label":"拒绝接收，把它退回仓库","after":"系统拒绝退件：寄件人和收件人都是你。"}},{"promptA":"记忆结尾出现具体日期：明天下午17:40，同一片海边。","promptB":"当晚你第一次梦见那片海，醒来时鞋里全是湿沙。","A":{"label":"按日期去海边","after":"那里真的有人等你。对方第一句话是：你比上一次早了三分钟。"},"B":{"label":"不去，观察记忆会不会改变","after":"17:40一到，封存记忆自动更新，画面里的海边变成了你现在所在的房间。"}},{"promptA":"对方递给你一份新的记忆，说这次轮到你决定要不要把它寄给63年前的自己。","promptB":"更新后的记忆里，你看见未来的自己正准备把这份记忆寄回过去。","A":{"label":"完成循环，把记忆寄回过去","after":"你签下寄存单。寄件日期自动改成63年前，而签名仍然是现在的你。"},"B":{"label":"终止循环，不再寄出任何东西","after":"你销毁了寄存单。那一刻，对方 / 未来画面里的你都露出如释重负的表情。"}}],"endings":{"3":{"title":"记忆回环","text":"你主动完成了63年的闭环。没人能解释第一份记忆最初从哪里来，但它会永远在你的人生里循环。"},"1":{"title":"迟到的相遇","text":"你参与了循环，却改变了其中一部分。下一次记忆抵达时，海边的人和时间都变了，只有一句话没变：别迟到。"},"-1":{"title":"未寄出的记忆","text":"你没有彻底完成闭环。此后仓库会偶尔收到没有寄件日期的记忆，每一份都与你有关。"},"-3":{"title":"终止投递","text":"你拒绝让记忆继续循环。系统终于接受销毁请求，但最后生成了一条空白记录：收件人仍然是你。"}}},"deep":{"rounds":[{"prompt":"灯塔下方，一座已经沉没146年的城市用古老航海信号向你发送：请关灯。","A":{"label":"关掉灯塔","after":"海面彻底黑下去。12秒后，海底城市亮起成千上万盏灯。"},"B":{"label":"继续让灯亮着","after":"第二天声呐显示海底街道上出现大量移动目标，而且它们都在避开灯光。"}},{"promptA":"一条由海底灯光组成的航道从城市中心一直延伸到你的灯塔脚下。","promptB":"移动目标开始聚集在灯塔照不到的盲区，并用声呐重复你的姓名。","A":{"label":"下潜，沿着航道进入城市","after":"潜航器进入街道后，导航系统把这里识别成“当前有人居住区域”。"},"B":{"label":"提高灯塔亮度，阻止它们靠近","after":"灯光升到最大功率。海底所有移动目标同时停下，抬头朝向你。"}},{"promptA":"城市中央有一座仍在运行的车站，广播说：最后一班去往海面的车即将发出。","promptB":"灯塔电力即将耗尽，你只能选择留下最后一束光，或彻底关闭系统。","A":{"label":"打开通道，让海底的人上来","after":"你启动了通道。声呐显示大量目标开始沿旧轨道向海面移动。"},"B":{"label":"封死通道，让城市继续留在海底","after":"你关闭了最后接口。海底灯光依次熄灭，只留下中央一盏灯仍在闪。"}}],"endings":{"3":{"title":"沉城重启","text":"你打开了通道。第二天海面没有出现任何人，但全球失踪人口数据库同时减少了数千条记录。"},"1":{"title":"海底来客","text":"你只开放了部分路径。此后每次换班，灯塔里都会多出一些从未属于现代世界的物品。"},"-1":{"title":"光之边界","text":"你守住了灯塔，也守住了城市。海底目标仍然存在，只要灯光熄灭，它们就会重新靠近。"},"-3":{"title":"最后一盏灯","text":"你彻底封闭了海底城市。多年后灯塔退役，卫星照片却显示那片海域深处仍有一盏灯从未熄灭。"}}},"map":{"rounds":[{"prompt":"你绘制一条不存在的巷子时，发现地图尽头标着你现在居住的房间。","A":{"label":"沿巷子一直走到尽头","after":"你走了 11 分钟，手机显示自己从未离开原地。"},"B":{"label":"先把这条巷子从地图删除","after":"删除成功后，你家附近真的少了一条每天都会经过的路。"}},{"promptA":"尽头出现一扇写着你门牌号的门，门后传来家里的电视声。","promptB":"被删除的路开始从所有人的记忆里消失，只有你还记得它。","A":{"label":"打开这扇门确认另一侧","after":"门后是你的家，但里面的日历比现实早一天。"},"B":{"label":"标记坐标并立即撤离","after":"撤离路线在地图上不断变长，像不想让你出去。"}},{"promptA":"另一侧的你正在地图上把现实世界逐街删掉。","promptB":"系统要求你决定：恢复那条路，还是承认这片空白区域合法存在。","A":{"label":"抢回地图并恢复被删街区","after":"街区恢复了，但你的住址从此没有门牌号。"},"B":{"label":"保留空白区，让地图重新稳定","after":"地图恢复正常，只是每晚都会多出一条通往你家的虚线。"}}],"endings":{"3":{"title":"地图之外","text":"你保住了大部分城市，却把自己的住址变成了系统无法定位的空白点。"},"1":{"title":"双重街区","text":"两套街道开始轮流出现，你成为唯一能在切换时保持方向感的人。"},"-1":{"title":"虚线路径","text":"你没有完全恢复异常区域，但从此总能看见一条别人看不到的回家路线。"},"-3":{"title":"地址吞并","text":"你承认空白区存在。第二天，你家成为那片区域的第一栋正式建筑。"}}},"debt":{"rounds":[{"prompt":"你收到一张欠款单：某人欠了未来 17 年，担保人一栏写着你的名字。","A":{"label":"冻结债务人的时间账户","after":"账户被冻结后，你自己的年龄显示突然增加了一岁。"},"B":{"label":"先联系债务人本人","after":"对方接通后第一句话是：你终于来收第二次了。"}},{"promptA":"系统要求你补交担保人的一部分欠款，否则债务将转移给你的未来。","promptB":"债务人发来一张合照：17 年后的你站在他旁边。","A":{"label":"先支付一小段时间换取调查权限","after":"你失去了今天下午的记忆，却获得了完整债务链。"},"B":{"label":"拒绝支付，追查原始合同","after":"合同签署地点显示为你尚未出生时的病房。"}},{"promptA":"债务链终点显示：最初借出 17 年的人其实是未来的你。","promptB":"原始合同最后一页写着：只要你今天不签，未来的你就不会存在。","A":{"label":"接受闭环，承担这17年债务","after":"账户归零的瞬间，你记起了一段从未经历过的 17 年人生。"},"B":{"label":"撕毁合同，让时间系统自行修正","after":"所有债务记录消失，但你镜子里的样子比昨天年轻了一点。"}}],"endings":{"3":{"title":"时间债主","text":"你承担并完成了闭环，从此可以记得两套不同年龄的自己。"},"1":{"title":"分期人生","text":"债务没有完全消失，它被拆成许多细小时间段，藏进你未来的日常。"},"-1":{"title":"无主欠款","text":"你拒绝成为担保人，但那 17 年仍在系统里寻找新的所有者。"},"-3":{"title":"未发生的未来","text":"你彻底撕毁了合同。那张未来合照上的你从此变成了一片空白。"}}},"broadcast":{"rounds":[{"prompt":"直播结束后，热线第一次响起。对方要求你更正刚才的一条本地新闻。","A":{"label":"询问对方哪里报道错了","after":"对方说：火灾不是明天，是今晚。"},"B":{"label":"拒绝更改未经证实的新闻","after":"电话挂断后，字幕系统自动把“明天”改成“今晚”。"}},{"promptA":"对方给出一栋废弃公寓地址，并说那里还有居民。","promptB":"整座空城的广播开始重复同一栋公寓地址。","A":{"label":"暂停播报，亲自去现场","after":"公寓亮着灯，餐桌上还有刚做好的饭。"},"B":{"label":"继续播报并远程调取监控","after":"监控里没有人，但每个房间的电视都在播放你的直播。"}},{"promptA":"房间电话响起：如果你今晚不播出撤离通知，他们就会再次消失。","promptB":"系统要求你决定是否向“0 名居民”发布紧急撤离通知。","A":{"label":"播出撤离通知","after":"广播结束后，城市人口统计从 0 变成了 317。"},"B":{"label":"维持官方记录，不承认居民存在","after":"第二天城市仍是 0 人，但热线多了 317 个未接来电。"}}],"endings":{"3":{"title":"空城复播","text":"你承认了那些居民，城市开始重新出现在公共系统中，只是所有身份证签发日期都早了几十年。"},"1":{"title":"幽灵听众","text":"城市仍然被认定为空，但你的节目终于有了稳定听众。"},"-1":{"title":"未接来电","text":"你没有完全公开真相，热线每天都会增加新的未接记录。"},"-3":{"title":"零人口城市","text":"你维持了官方版本。从此每次播报结束，都有人在空无一人的街道为你鼓掌。"}}},"dreamrepair":{"rounds":[{"prompt":"损坏的怀表里正在播放你今晚才会做的梦。","A":{"label":"继续修表，看完梦境内容","after":"你看见梦里的自己在拼命阻止你修好最后一个齿轮。"},"B":{"label":"立即停止维修并封存","after":"怀表停下后，你突然忘记自己昨晚做过什么梦。"}},{"promptA":"最后一个齿轮上刻着你明天醒来的时间。","promptB":"封存柜里所有梦境遗物同时开始走时，时间都指向同一刻。","A":{"label":"装回最后齿轮","after":"怀表完全修复，你却在现实中听见梦里的敲门声。"},"B":{"label":"拆掉齿轮，让怀表永远不完整","after":"你成功阻止走时，但梦里的自己开始替你继续修复。"}},{"promptA":"午夜，怀表打开一道只存在于梦里的门。","promptB":"系统警告：遗物正在把现实判定为“未完成梦境”。","A":{"label":"进入那扇门找回原始梦境","after":"你进去后发现工作台另一侧坐着一个正在修复现实的自己。"},"B":{"label":"摧毁怀表，切断梦与现实","after":"怀表碎了，但第二天每块现实中的钟都开始显示梦里的时间。"}}],"endings":{"3":{"title":"现实修复中","text":"你进入了梦境工坊，并发现现实也只是一件尚未完成的遗物。"},"1":{"title":"双向修复","text":"梦与现实保持着一条细小通道，你偶尔会收到另一个自己修好的东西。"},"-1":{"title":"梦时残留","text":"通道被切断大半，但所有时钟仍会在你睡着时走向另一个时间。"},"-3":{"title":"无梦故障","text":"你彻底毁掉了遗物。从此你不再做梦，却开始在现实里遇到梦中的人。"}}},"deathdate":{"rounds":[{"prompt":"一份档案显示某人已经死亡 12 年。你打电话核对时，对方本人接了电话。","A":{"label":"要求对方到现场重新核验身份","after":"对方同意，但系统显示预约人已经在大厅等了 12 年。"},"B":{"label":"先查询这12年的生活记录","after":"银行、医疗、出行全部正常，只有每年同一天记录为空白。"}},{"promptA":"大厅里的来访者和电话里的声音完全一致，但年龄相差 12 年。","promptB":"空白日里只有一条共同记录：你的工号进行了人工修改。","A":{"label":"同时核验两个版本的人","after":"两人的生物信息都通过，而且都坚持另一个才是死者。"},"B":{"label":"追查你的工号为何出现","after":"日志显示修改发生在昨天，而昨天你的档案已经写着死亡。"}},{"promptA":"系统只允许保留一个合法身份。","promptB":"系统给你一次机会：修正一个人的死亡日期，也包括你自己。","A":{"label":"手动保留当前仍在生活的人","after":"另一个版本从系统消失，但他的记忆留在了你的审核日志里。"},"B":{"label":"拒绝决定，让系统保留矛盾","after":"第二天全城出现大量“已死亡但仍生活”的合法身份。"}}],"endings":{"3":{"title":"生命版本保留","text":"你选择了一个现实版本，但开始不断梦见被删除的那一个。"},"1":{"title":"双重生存","text":"系统勉强接受矛盾，少量人开始拥有两个合法死亡日期。"},"-1":{"title":"日期漂移","text":"你没有真正解决冲突，每次校对都会让自己的日期向后移动。"},"-3":{"title":"死亡未确认","text":"你拒绝修正。此后你的档案状态一直停留在：等待本人确认死亡。"}}},"route":{"rounds":[{"prompt":"凌晨 03:07，一班不存在的列车请求进站。终点站名称是你的出生日期。","A":{"label":"给它开放一条临时进站线","after":"轨道传感器显示列车已经进站，但站台上什么都没有。"},"B":{"label":"拒绝进站并要求返回始发地","after":"系统回复：始发地不存在，无法返回。"}},{"promptA":"空站台上自动打开了 17 扇车门，最后一扇门里传来你的声音。","promptB":"列车改为请求“接走一名已检票乘客”，乘客编号是你的工号。","A":{"label":"走近最后一节车厢","after":"车窗里坐着一个正在看你的自己。"},"B":{"label":"锁闭站台并切断线路","after":"线路断开后，你口袋里出现了一张已检票车票。"}},{"promptA":"车上的你说：这班车只允许一个版本抵达下一站。","promptB":"车票开始倒计时，终点站从出生日期变成今天。","A":{"label":"登车，亲自确认下一站","after":"车门关闭后，站台监控里仍留下了一个你。"},"B":{"label":"留在站台，让列车空车离开","after":"列车驶离后，你的车票显示：乘客已抵达。"}}],"endings":{"3":{"title":"双重抵达","text":"你登上列车，却也留在了站台。两个版本从此都拥有完整记忆。"},"1":{"title":"平行换乘","text":"你只走了一部分线路，偶尔会在普通列车窗外看到另一座站台。"},"-1":{"title":"已检票未登车","text":"你没有真正离开，但系统始终认为你正在另一条线路上旅行。"},"-3":{"title":"不存在终点","text":"你拒绝了整条航线。03:07 之后，所有交通工具都不再显示你的目的地。"}}}};
 const ROUTE_TAGS={"AAA":"深入线","AAB":"折返线","ABA":"偏航线","ABB":"残响线","BAA":"逆行线","BAB":"镜像线","BBA":"封存线","BBB":"终止线"};
 
-let cur=null,story=null,place="",year=0,code="",age=0,displayJob="",round=0,path=[],logs=[],cardDataUrl="",openingVariant=0;
+let cur=null,story=null,place="",year=0,code="",age=0,displayJob="",round=0,path=[],logs=[],cardDataUrl="",openingVariant=0,discoveries=[],anomalyScore=0,flags={},extraRoundUnlocked=false,hiddenChoice="",pendingAfterMain=false;
 const places=["穹顶城 · 第三区","垂直城 · 118层","旧东京环城 · 北区","漂流城邦 · 东七码头","太平洋浮岛群 · 17区","深蓝自治港","北纬无人区 · 04站","旧大陆生态禁区","风蚀荒原 · 边境站","环月港 · 9号区","地下城 · 旧线总站"];
 const $=id=>document.getElementById(id);
 function show(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));$(id).classList.add("active");scrollTo(0,0)}
@@ -24,7 +24,7 @@ function startLife(forceId=null){
   cur=forceId?LIVES.find(x=>x.id===forceId):pick(LIVES);story=STORIES[cur.id];openingVariant=Math.random()<.5?0:1;
   place=pick(places);year=2080+Math.floor(Math.random()*171);age=24+Math.floor(Math.random()*34);
   code=`${cur.codePrefix||"PL"}-${String(Math.floor(Math.random()*999999)).padStart(6,"0")}`;
-  displayJob=Math.random()<.22?cur.altjob:cur.job;round=0;path=[];logs=[];cardDataUrl="";
+  displayJob=Math.random()<.22?cur.altjob:cur.job;round=0;path=[];logs=[];discoveries=[];anomalyScore=0;flags={};extraRoundUnlocked=false;hiddenChoice="";pendingAfterMain=false;cardDataUrl="";
   runLoad("正在从 18 份职业档案中匹配你的世界线……","IDENTITY // SEARCHING",renderDecision,1050);
 }
 function replaySame(){startLife(cur.id)}
@@ -51,11 +51,200 @@ function renderDecision(){
   <button class="btn choice" data-choice="A">${r.A.label}<small>这一步会写入最终世界线</small></button>
   <button class="btn choice" data-choice="B">${r.B.label}<small>这一步会写入最终世界线</small></button></div></div>`;show("decision")
 }
-function choose(letter){
-  const r=currentRoundData();path.push(letter);logs.push(`${letter} · ${r[letter].after}`);round++;
-  if(round<3)runLoad("正在根据你的选择重算世界线……",`DECISION ${round} // RECORDED`,renderDecision,620);
-  else runLoad("三次选择已锁定。正在整理异常记录与后日谈……","WORLDLINE // FINALIZING",renderResult,820);
+
+
+const EVENT_PROBS=[0.35,0.50,0.65];
+const TYPE_WEIGHTS=[
+  ["异常检测",0.35],
+  ["发现遗留物",0.30],
+  ["未公开记录",0.20],
+  ["自我痕迹",0.15]
+];
+const QUIET_LINES=[
+  "档案校验完成。本轮没有发现可归档异常。",
+  "扫描未发现新增记录，但环境参数出现过一次无法复现的轻微偏差。",
+  "没有找到新的物证。系统建议继续观察，不要过早下结论。",
+  "本轮记录看起来正常。唯一奇怪的是时间戳比现实慢了几秒。",
+  "没有异常入库，但系统短暂失去过你的身份定位。"
+];
+
+function weightedType(){
+  const r=Math.random();let s=0;
+  for(const [name,w] of TYPE_WEIGHTS){s+=w;if(r<=s)return name}
+  return "异常检测";
 }
+function pickStatus(step){
+  const arr=cur.statuses||["异常记录","世界线偏移","身份冲突"];
+  return arr[Math.min(step,arr.length-1)]||arr[0];
+}
+function makeEvent(step,letter,after){
+  const type=weightedType();
+  const status=pickStatus(step);
+  let d={type,icon:"◉",title:"",body:"",meta:"",score:1,critical:false};
+
+  if(type==="异常检测"){
+    d.icon="◉";
+    d.title=`检测到：${status}`;
+    d.body=after;
+    d.meta=`异常编号 ${cur.codePrefix||"PL"}-${String(hashCode(cur.id+letter+openingVariant+step)%900+100)} · 已写入临时档案`;
+    d.score=1;
+  }
+  if(type==="发现遗留物"){
+    d.icon="◇";
+    d.title=cur.legacy;
+    const bodies=[
+      "它出现在你刚刚做出选择之后，来源无法确认。",
+      "系统没有找到它的登记记录，但材质与当前世界线完全匹配。",
+      "它本不该存在于现场，却像已经在这里放了很多年。"
+    ];
+    d.body=pick(bodies);
+    d.meta="遗留物已临时入库 · 结局后确认是否保留";
+    d.score=1;
+    if(step>=2 && Math.random()<0.28){d.score=2;d.critical=true;flags.criticalRelic=true}
+  }
+  if(type==="未公开记录"){
+    d.icon="▤";
+    d.title="档案权限短暂提升";
+    const secret=cur.secret||"系统打开了一条不属于你权限范围的记录。";
+    d.body=secret.length>58?secret.slice(0,58)+"……":secret;
+    d.meta="只解锁了部分内容 · 完整记录仍处于封存状态";
+    d.score=1;
+    if(Math.random()<0.20){d.critical=true;d.score=2;flags.restrictedRecord=true}
+  }
+  if(type==="自我痕迹"){
+    d.icon="◎";
+    const selfTitles=[
+      "记录里出现了你的名字",
+      "系统发现与你一致的旧签名",
+      "一条记录显示你曾经来过这里",
+      "档案中的当事人身份与你重叠"
+    ];
+    d.title=pick(selfTitles);
+    const selfBodies=[
+      `记录时间早于你出生，但身份校验仍然指向现在的你。`,
+      `这条记录没有照片，只有与你完全一致的身份编号。`,
+      `系统无法判断这是伪造、未来记录，还是另一条世界线残留。`,
+      `你没有这段记忆，但档案认为你亲自确认过它。`
+    ];
+    d.body=pick(selfBodies);
+    d.meta="高优先级异常 · 将影响是否开启补充调查";
+    d.score=2;d.critical=true;flags.selfTrace=true;
+  }
+  return d;
+}
+function shouldTriggerEvent(step){
+  return Math.random() < EVENT_PROBS[step];
+}
+function showQuietTransition(doneMain){
+  const msg=pick(QUIET_LINES);
+  if(doneMain){
+    pendingAfterMain=true;
+    runLoad(msg,"SCAN // NO NEW ENTRY",afterMainRounds,820);
+  }else{
+    runLoad(msg,`DECISION ${round} // CLEAN`,renderDecision,760);
+  }
+}
+function renderDiscovery(d,doneMain){
+  discoveries.push(d);
+  anomalyScore+=d.score||1;
+  $("discoveryOut").innerHTML=`<div class="discoveryScene">
+    <div class="discoverPulse">${d.icon}</div>
+    <div class="eyebrow">${d.type.toUpperCase()} // NEW ENTRY</div>
+    <h2>${d.title}</h2>
+    <div class="discoverBody">${d.body}</div>
+    <div class="discoverMeta">${d.meta}</div>
+    <div class="riskMeter"><span>异常累计</span><b>${anomalyScore}</b></div>
+    <button class="btn primary" data-action="continue-discovery">${doneMain?"继续封档":"继续调查"}</button>
+  </div>`;
+  $("discoveryOut").dataset.doneMain=doneMain?"1":"0";
+  show("discovery");
+}
+function decideHiddenRound(){
+  if(flags.selfTrace||flags.criticalRelic||flags.restrictedRecord)return true;
+  if(anomalyScore<=1)return false;
+  if(anomalyScore===2)return Math.random()<0.35;
+  return Math.random()<0.70;
+}
+function hiddenPrompt(){
+  const relic=discoveries.find(x=>x.type==="发现遗留物");
+  const self=discoveries.find(x=>x.type==="自我痕迹");
+  const record=discoveries.find(x=>x.type==="未公开记录");
+  if(self)return {
+    prompt:"系统拒绝封档：另一份身份记录正在申请与你合并。是否承认那也是“你”？",
+    A:{label:"承认这份身份记录",after:"两份身份被同时保留，系统开始用复数称呼你。"},
+    B:{label:"拒绝合并并封存记录",after:"记录被封存，但你的身份页上多出一个无法删除的旧版本。"}
+  };
+  if(relic)return {
+    prompt:`封档前，${relic.title}再次出现异常反应。是否继续测试它？`,
+    A:{label:"继续测试遗留物",after:"遗留物短暂指向一个不属于当前世界线的位置。"},
+    B:{label:"立即封存遗留物",after:"封存完成，但容器内部仍在持续产生新的时间戳。"}
+  };
+  if(record)return {
+    prompt:"未公开记录还有最后一页没有读取。系统提示：继续读取可能改变当前结局。",
+    A:{label:"读取最后一页",after:"最后一页只有一句话：这一次，你终于看到了。"},
+    B:{label:"保持封存，不再读取",after:"权限关闭前，你看见页面标题写着自己的档案编号。"}
+  };
+  return {
+    prompt:"封档失败。系统检测到一条未处理的世界线偏移，请确认是否进行补充调查。",
+    A:{label:"继续补充调查",after:"系统打开了一条从未出现在前三轮里的旁支记录。"},
+    B:{label:"强制结束调查",after:"封档成功，但异常计数没有归零。"}
+  };
+}
+function renderHiddenRound(){
+  const h=hiddenPrompt();
+  $("hiddenOut").innerHTML=`<div class="hiddenScene">
+    <div class="hiddenMark">04</div>
+    <div class="eyebrow">UNAUTHORIZED ROUND // 补充调查</div>
+    <h2>档案没有正常结束。</h2>
+    <div class="hiddenPrompt">${h.prompt}</div>
+    <button class="btn choice" data-hidden="A">${h.A.label}<small>隐藏分支 A</small></button>
+    <button class="btn choice" data-hidden="B">${h.B.label}<small>隐藏分支 B</small></button>
+    <div class="hiddenNote">只有部分世界线会进入这一轮。</div>
+  </div>`;
+  $("hiddenOut").dataset.afterA=h.A.after;
+  $("hiddenOut").dataset.afterB=h.B.after;
+  show("hidden");
+}
+function afterMainRounds(){
+  extraRoundUnlocked=decideHiddenRound();
+  if(extraRoundUnlocked){
+    runLoad("封档失败。检测到未处理异常……","EXTRA ROUND // UNLOCKED",renderHiddenRound,900);
+  }else{
+    runLoad("三次选择已锁定。正在生成最终档案……","WORLDLINE // FINALIZING",renderResult,780);
+  }
+}
+function choose(letter){
+  const r=currentRoundData();
+  path.push(letter);
+  logs.push(`${letter} · ${r[letter].after}`);
+  const step=round;
+  round++;
+  const doneMain=round>=3;
+  if(shouldTriggerEvent(step)){
+    const d=makeEvent(step,letter,r[letter].after);
+    renderDiscovery(d,doneMain);
+  }else{
+    showQuietTransition(doneMain);
+  }
+}
+function chooseHidden(letter){
+  const out=$("hiddenOut");
+  hiddenChoice=letter;
+  const after=letter==="A"?out.dataset.afterA:out.dataset.afterB;
+  logs.push(`隐藏轮 ${letter} · ${after}`);
+  const d={
+    type:"隐藏分支确认",
+    icon:"✦",
+    title:letter==="A"?"你选择继续接近异常":"你选择切断最后的联系",
+    body:after,
+    meta:`H-${letter} 已写入最终档案`,
+    score:0,
+    critical:true
+  };
+  discoveries.push(d);
+  runLoad("补充调查已结束。正在重新计算最终结局……","EXTRA ROUND // RECORDED",renderResult,820);
+}
+
 function routeEpilogue(){
   const p=path.join("");const last=logs[logs.length-1]?.replace(/^.[ ]?·[ ]?/,"")||"";
   const t={
@@ -74,20 +263,54 @@ function lineStatus(){const arr=cur.statuses||["稳定","污染","未知"];retur
 function pathFoundCount(){const p=getProgress();return Object.keys((p.paths||{})[cur.id]||{}).length}
 function renderResult(){
   const key=endingKey(),ending=story.endings[key],score=Number(key),route=path.join("");
-  const danger=clamp(starsToN(cur.danger)+(score>0?1:0)),freedom=clamp(starsToN(cur.freedom)+(score===3?1:score===-3?-1:0));saveProgress();
-  const finalTitle=`${ending.title} · ${ROUTE_TAGS[route]||"异常线"}`;
-  $("out").innerHTML=`<div class="resultHero"><div class="eyebrow">WORLDLINE LOCKED // ${code}</div><div class="muted">三次选择已经写入档案 · 异常开局 ${openingVariant+1}/2</div>
-  <div class="resultJob">${displayJob}</div><div class="route">${path.join("-")}</div><div class="meta">${year} 年出生 · ${place}</div><img class="portrait resultPortrait" src="${cur.img}"></div>
-  <div class="stats"><div class="stat">人生稀有度<b>${cur.rare}</b></div><div class="stat">身份可信度<b>${cur.trust}</b></div><div class="stat">危险程度<b>${danger}/5</b></div><div class="stat">自由程度<b>${freedom}/5</b></div></div>
+  const danger=clamp(starsToN(cur.danger)+(score>0?1:0)+(extraRoundUnlocked?1:0));
+  const freedom=clamp(starsToN(cur.freedom)+(score===3?1:score===-3?-1:0));
+  saveProgress();
+  const hiddenTag=extraRoundUnlocked?` · H-${hiddenChoice}`:"";
+  const finalTitle=`${ending.title} · ${ROUTE_TAGS[route]||"异常线"}${hiddenTag}`;
+  const relicEvent=discoveries.find(x=>x.type==="发现遗留物");
+  const restricted=discoveries.find(x=>x.type==="未公开记录"||x.type==="自我痕迹"||x.type==="隐藏分支确认");
+  const anomalyHtml=discoveries.length
+    ? discoveries.map((d,i)=>`<div class="midFound"><span>${d.icon}</span><div><b>${i+1}. ${d.type}</b><small>${d.title}</small></div></div>`).join("")
+    : `<div class="noFind">本次调查没有发现可单独归档的异常物证。世界线仍然可以正常封存。</div>`;
+
+  $("out").innerHTML=`<div class="resultHero">
+    <div class="eyebrow">WORLDLINE LOCKED // ${code}</div>
+    <div class="muted">${extraRoundUnlocked?"你进入了隐藏第 4 轮":"主流程在第 3 轮正常封档"} · 异常开局 ${openingVariant+1}/2</div>
+    <div class="resultJob">${displayJob}</div>
+    <div class="route">${path.join("-")}${hiddenTag}</div>
+    <div class="meta">${year} 年出生 · ${place}</div>
+    <img class="portrait resultPortrait" src="${cur.img}">
+  </div>
+  <div class="stats">
+    <div class="stat">人生稀有度<b>${cur.rare}</b></div><div class="stat">身份可信度<b>${cur.trust}</b></div>
+    <div class="stat">危险程度<b>${danger}/5</b></div><div class="stat">异常累计<b>${anomalyScore}</b></div>
+  </div>
   <div class="statusStrip"><span>世界线状态</span><b>${lineStatus()}</b><span>异常编号</span><b>${anomalyCode()}</b></div>
+
   <div class="sec"><h3>01 // 你的世界</h3>${cur.world}</div>
-  <div class="sec"><h3>02 // 世界线路径</h3><div class="route">${path.join("-")}</div>${logs.map((x,i)=>`<div class="pathlog">第${i+1}次：${x}</div>`).join("")}</div>
+  <div class="sec"><h3>02 // 世界线路径</h3><div class="route">${path.join("-")}${hiddenTag}</div>
+    ${logs.map((x,i)=>`<div class="pathlog">${i<3?`第${i+1}次`:"隐藏轮"}：${x}</div>`).join("")}
+  </div>
   <div class="sec"><h3>03 // 平行人生结局</h3><div class="endingTitle">${finalTitle}</div><div class="choiceResult"><div class="aftermath">${ending.text}</div></div></div>
-  <div class="sec"><h3>04 // 遗留物</h3><div class="twist">${cur.legacy}</div></div><div class="sec"><h3>05 // 未公开记录</h3>${cur.secret}</div>
-  <div class="sec"><h3>06 // 后日谈</h3><div class="epilogue">${routeEpilogue()}</div></div>
-  <div class="discoveryCard"><div class="eyebrow">LOCAL ARCHIVE // 本地发现度</div><b>本身份已发现路径 ${pathFoundCount()} / 8</b><span data-discovery></span></div>
-  <div class="actions"><button class="btn primary" data-action="make-card">▣ 生成最终居民档案卡</button><button class="btn" data-action="replay-same">↻ 重走这个身份</button><button class="btn" data-action="start-life">⌁ 重新抽一个职业</button>
-  <div class="ctaNote">18 个职业 · 每个职业 2 种异常开局 · 3 次选择 · 8 条世界线路径</div><div class="tiny">半格电 · 另一条人生 V2.3 内容扩充版</div></div>`;updateDiscovery();show("res")
+  <div class="sec"><h3>04 // 异常摘要</h3>${anomalyHtml}</div>
+  <div class="sec"><h3>05 // 遗留物</h3><div class="twist">${relicEvent?relicEvent.title:"本次调查未取得可归档遗留物"}</div></div>
+  <div class="sec"><h3>06 // 未公开记录</h3>${restricted?cur.secret:"权限不足。本条世界线没有解锁额外记录。"}</div>
+  <div class="sec"><h3>07 // 后日谈</h3><div class="epilogue">${routeEpilogue()}</div></div>
+
+  <div class="discoveryCard"><div class="eyebrow">LOCAL ARCHIVE // 本地发现度</div>
+    <b>本身份已发现路径 ${pathFoundCount()} / 8</b>
+    <span>本轮触发 ${discoveries.length} 个异常记录${extraRoundUnlocked?" · 已进入隐藏第4轮":""}</span>
+    <span data-discovery></span>
+  </div>
+  <div class="actions">
+    <button class="btn primary" data-action="make-card">▣ 生成最终居民档案卡</button>
+    <button class="btn" data-action="replay-same">↻ 重走这个身份</button>
+    <button class="btn" data-action="start-life">⌁ 重新抽一个职业</button>
+    <div class="ctaNote">18 个职业 · 3 轮主线 · 随机异常事件 · 概率隐藏第 4 轮</div>
+    <div class="tiny">半格电 · 另一条人生 V2.4 异常档案版</div>
+  </div>`;
+  updateDiscovery();show("res");
 }
 function drawWrappedText(ctx,text,x,y,maxWidth,lineHeight,maxLines){const chars=[...text],lines=[];let line="";for(const ch of chars){const test=line+ch;if(ctx.measureText(test).width>maxWidth&&line){lines.push(line);line=ch;if(lines.length>=maxLines)break}else line=test}if(lines.length<maxLines&&line)lines.push(line);if(lines.length===maxLines&&chars.join("").length>lines.join("").length){let last=lines[maxLines-1];while(ctx.measureText(last+"…").width>maxWidth&&last.length>0)last=last.slice(0,-1);lines[maxLines-1]=last+"…"}lines.forEach((ln,i)=>ctx.fillText(ln,x,y+i*lineHeight))}
 function drawCover(ctx,img,x,y,w,h){const r=Math.max(w/img.naturalWidth,h/img.naturalHeight),sw=w/r,sh=h/r,sx=(img.naturalWidth-sw)/2,sy=Math.max(0,(img.naturalHeight-sh)*.25);ctx.drawImage(img,sx,sy,sw,sh,x,y,w,h)}
@@ -111,5 +334,22 @@ async function saveCard(){
   try{const miniTool=window.xhs&&window.xhs.miniTool;if(miniTool&&miniTool.saveImageToPhotosAlbum){let filePath=cardDataUrl;if(miniTool.writeTempFile){const temp=await miniTool.writeTempFile({data:cardDataUrl});if(temp&&temp.filePath)filePath=temp.filePath}await miniTool.saveImageToPhotosAlbum({filePath});alert("居民档案卡已保存到相册。");return}
   const a=document.createElement("a");a.download=`半格电_${displayJob}_${path.join("")}_${code}.png`;a.href=cardDataUrl;document.body.appendChild(a);a.click();a.remove()}catch(e){alert("保存失败，可以长按图片或截图保存。")}
 }
-document.addEventListener("click",e=>{const el=e.target.closest("[data-action],[data-choice]");if(!el)return;if(el.dataset.choice){choose(el.dataset.choice);return}const a=el.dataset.action;if(a==="start-life")startLife();if(a==="replay-same")replaySame();if(a==="close-modal")$("modal").classList.remove("on");if(a==="make-card")makeCard();if(a==="save-card")saveCard()});
+document.addEventListener("click",e=>{
+  const hidden=e.target.closest("[data-hidden]");
+  if(hidden){chooseHidden(hidden.dataset.hidden);return}
+  const el=e.target.closest("[data-action],[data-choice]");
+  if(!el)return;
+  if(el.dataset.choice){choose(el.dataset.choice);return}
+  const a=el.dataset.action;
+  if(a==="start-life")startLife();
+  if(a==="replay-same")replaySame();
+  if(a==="close-modal")$("modal").classList.remove("on");
+  if(a==="make-card")makeCard();
+  if(a==="save-card")saveCard();
+  if(a==="continue-discovery"){
+    const doneMain=$("discoveryOut").dataset.doneMain==="1";
+    if(doneMain)afterMainRounds();
+    else runLoad("异常记录已写入。正在打开下一段世界线……",`DECISION ${round} // UNLOCKING`,renderDecision,560);
+  }
+});
 updateDiscovery();

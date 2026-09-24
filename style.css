@@ -80,3 +80,23 @@ h1{font-size:39px;line-height:1.1;margin:14px 0}
 @keyframes scan{from{top:0}to{top:100vh}}
 @keyframes f{from{opacity:0;transform:translateY(7px)}to{opacity:1}}
 @media(max-width:420px){h1{font-size:34px}.job{font-size:31px}.resultJob{font-size:33px}.wrap{padding:18px 14px 36px}.statusStrip{grid-template-columns:auto 1fr}}
+
+.discoveryScreen{justify-content:center}
+.discoveryScene{border:1px solid #315247;border-radius:20px;background:radial-gradient(circle at 50% 0,#13251f,#0b1117 52%);padding:26px 20px;box-shadow:0 0 40px #79e2bd12}
+.discoverPulse{width:76px;height:76px;border:1px solid #6fd8b4;border-radius:50%;display:grid;place-items:center;margin:0 auto 22px;color:#9af0cf;font-size:34px;box-shadow:0 0 28px #8fe3c240;animation:pulse 1.6s ease-in-out infinite}
+.discoveryScene h2{font-size:26px;line-height:1.4;margin:7px 0 14px}
+.discoverBody{font-size:17px;line-height:1.9;color:#e2e7e9;border-left:3px solid var(--a);padding:3px 0 3px 14px}
+.discoverMeta{margin-top:16px;padding:11px 12px;border:1px dashed #34463f;border-radius:10px;color:#7f9189;font-size:11px;line-height:1.6}
+.midFound{display:flex;gap:12px;align-items:flex-start;border:1px solid #202d35;border-radius:11px;padding:11px 12px;margin:8px 0;background:#0b1117}
+.midFound>span{color:var(--a);font-size:20px;line-height:1.2}.midFound b{display:block;font-size:13px}.midFound small{display:block;color:#82909a;margin-top:4px;line-height:1.5}
+@keyframes pulse{0%,100%{transform:scale(1);box-shadow:0 0 20px #8fe3c22e}50%{transform:scale(1.06);box-shadow:0 0 42px #8fe3c25c}}
+
+.riskMeter{display:flex;justify-content:space-between;align-items:center;margin-top:13px;padding:10px 12px;border-top:1px solid #26352f;color:#829189;font-size:11px}
+.riskMeter b{color:var(--a);font-size:18px}
+.hiddenScreen{justify-content:center}
+.hiddenScene{border:1px solid #6b5636;border-radius:20px;background:radial-gradient(circle at 50% 0,#251d12,#0b1015 52%);padding:26px 20px;box-shadow:0 0 45px #e8b85f12}
+.hiddenMark{font-size:74px;line-height:1;font-weight:900;color:#e7c98222;position:absolute;right:34px;margin-top:-16px}
+.hiddenScene h2{font-size:28px;line-height:1.35;margin:9px 0 16px}
+.hiddenPrompt{font-size:18px;line-height:1.9;color:#f0e9dc;border-left:3px solid #e1c173;padding:4px 0 4px 14px;margin-bottom:15px}
+.hiddenNote{text-align:center;color:#887b66;font-size:11px;margin-top:13px}
+.noFind{border:1px dashed #2b343d;border-radius:11px;padding:14px;color:#7e8992;line-height:1.75}
